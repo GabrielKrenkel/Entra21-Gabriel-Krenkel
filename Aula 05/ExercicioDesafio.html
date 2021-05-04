@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("exercicio 17");
+        let numero=Number(prompt("Digite um numero")) 
+        let antecessor= numero - 1
+        let sucessor=numero + 1
+        console.log(`O antecessor de ${numero} é ${antecessor} e o sucessor é ${sucessor}.`);
+
+        console.log("exercicio 18");
+        let r=Number(prompt("Insira o raio"))
+        const pi=3.14159
+        let volume=(4/3) * pi * r**3
+        console.log(` O volume da esfera com raio ${r} é: ${volume}.`)
+
+        console.log("exercicio 19");
+        alert("Vamos calcular a área de um triangulo")
+        let b=Number(prompt("Digite a base"))
+        let h=Number(prompt("Digite a altura"))
+        let a =b * h / 2
+        console.log(`Área = ${a}`)
+
+        console.log("exercicio 20");
+        let valor=Number(prompt("Insira o valor do produto"))
+        let desconto=Number(prompt("Insira o valor do desconto"))
+        let vdesconto=desconto / 100 * valor
+        let vpagar=valor - vdesconto
+        console.log(`Pagar:R$${vpagar.toFixed(2)}\nDesconto: ${desconto}%`);
+
+        console.log("exercicio 21");
+        let nome=prompt("Digite o nome do funcionario")
+        let salario=Number(prompt("Digite o salario do funcionario"))
+        let comissao=Number(prompt("Digite a comissao do funcionario"))
+        let vcomissao= 15 / 100 * comissao
+        let salariofinal=vcomissao + salario
+        console.log(`O salario com a comissao de ${nome} é de: R$${salariofinal.toFixed(2)}`);
+        
+    </script>
+</body>
+</html>

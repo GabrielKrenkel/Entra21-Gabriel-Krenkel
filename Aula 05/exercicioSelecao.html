@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("exercicio 1");
+        console.log(!10) // False
+        console.log(!!"String") // True
+        console.log(!!2.3) // True
+        console.log(Boolean(null)) // False
+
+        console.log("exercicio 2");
+        console.log(10 > 2) // true
+        console.log(5 >= "5") // true
+        console.log(5 >= "5") // erro de syntax
+        console.log("apple" > "pineapple") // false
+        console.log("2" > "12") // true
+        console.log(undefined == null) // true 
+        console.log(undefined === null) // false
+        console.log(null == "\n0\n") // false
+        console.log(null === +"\n0\n") // false
+
+        console.log("exercicio 3");
+        let numero=Number(prompt("Digite um numero"))
+            if (numero>=10) {
+            console.log(`O numero ${numero} é maior ou igual a 10\nPrograma finalizado...`);} 
+            else {
+                console.log(`Programa finalizado`);}
+
+        console.log("exercicio 4");
+        let numero1=Number(prompt("Digite um numero"))
+            if (numero1 % 2 === 0) {
+                b=numero1 / 2
+                console.log(`${b}\nPrograma finalizado`);} 
+                else {
+                    console.log(`Programa finalizado`);}
+        
+        console.log("exercicio 5");
+        let numero2=Number(prompt("Digite um numero"))
+            if (numero2 % 2 === 0) {
+                console.log(`O numero ${numero2} é par`);} 
+                    else {
+                        console.log(`O numero ${numero2} é impar`);}
+
+        console.log("exercicio 6");
+        let numero3=Number(prompt("Digite um numero"))
+            if (numero3>20 && numero3<90) {
+                console.log(`O numero ${numero3} esta entre 20 e 90`);} 
+                    else {
+                        console.log(`O numero ${numero3} nao esta entre 20 e 90`);}
+        
+    </script>
+</body>
+</html>

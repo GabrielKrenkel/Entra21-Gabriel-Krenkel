@@ -1,0 +1,10 @@
+Criado conta no git
+
+aprendido comandos
+
+git init
+git add .
+git commit -m "comentario"
+git status
+git clone
+git push

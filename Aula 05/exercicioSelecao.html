@@ -34,8 +34,9 @@
         console.log("exercicio 4");
         let numero1 = Number(prompt("Digite um numero"))
             if (numero1 % 2 === 0) {
-                b = numero1 / 2
-                console.log(`${b}\nPrograma finalizado`);} 
+                let b = numero1 / 2
+                console.log(`${b}\n Programa finalizado`)
+                } 
                 else {
                     console.log(`Programa finalizado`);}
         
@@ -67,15 +68,88 @@
         let b = Number(prompt("Digite um numero"))
         let c = Number(prompt("Digite um numero")) 
         if (a > b && a > c) {
-            console.log(`${a} é maior numero.`);
-        }
-        if (b > a && b > c) {
-            console.log(`${b} é maior numero.`);
-        }
-        if (c > b && c > a) {
-            console.log(`${c} é maior numero.`);
+            console.log(`${a} é maior numero.`)
+        } else if (b > a && b > c) {
+            console.log(`${b} é maior numero.`)
+        } else (c > b && c > a); {
+            console.log(`${c} é maior numero.`)
         }
 
+        console.log("Eexercicio 9")
+        let valorA = Number(prompt("Digite um numero"))
+        let valorB = Number(prompt("Digite um numero"))
+        valorA + valorB < 4 ?  console.log("Abaixo") : console.log("Acima")
+
+        console.log("Exercicio 10")
+        let ladoA = Number(prompt("Digite a base"))
+        let ladoB = Number(prompt("Digite um lado"))
+        let ladoC = Number(prompt("Digite outro lado"))
+        if (ladoA === ladoB && ladoB === ladoC) {
+            console.log("Triângulo Equilátero: possui os 3 lados iguais.")
+        } else if (ladoA === ladoB || ladoB === ladoC) {
+            console.log("Triângulo Isósceles: possui 2 lados iguais.")
+        }   else if (ladoA != ladoB && ladoB != ladoC) {
+            console.log("Triângulo Escaleno: possui 3 lados diferentes.")
+        }
+
+        console.log("Exercicio 11")
+        let numero4 = Number(prompt("Digite um numero"))
+        if (numero4 > 0) {
+            let raiz = Math.sqrt(numero4)
+            console.log(`A raiz quadrada de ${numero4} é: ${raiz.toFixed(2)}`)
+        } else {
+            console.log("Numero negativo.")
+        }
+
+        console.log("Exercicio 12")
+        let numero6 = (prompt("Digite um numero"))
+        if (numero6 / 5 % 0) {
+            console.log("Numero divisivel por 5")
+        } else {
+            console.log("Numero nao divisivel por 5")
+        }
+
+        console.log("Exercicio 13")
+        let numero5 = Number(prompt("Digite um numero"))
+        if (numero5 > 0) {
+            let raiz = Math.sqrt(numero5)
+            console.log(`A raiz quadrada de ${numero5} é: ${raiz.toFixed(2)}`)
+        } else {
+            console.log(`${numero5} elevado ao quadrado é: ${numero ** 2}`)
+        }
+
+        console.log("Exercicio 14")
+        let salario = Number(prompt("Insira o seu salário"))
+        let vEmprestimo = Number(prompt("Insira a parcela do empréstimo."))
+        let naoultrapassar = salario / 5 + salario
+        if (naoultrapassar > vEmprestimo) {
+            console.log("empréstimo concedido")
+        } else {
+            console.log("empréstimo não concedido")
+        }
+
+        console.log("Exercicio 15")
+        let time1 = Number(prompt("Digite o placar do time 1"))
+        let time2 = Number(prompt("Digite os gols do time 2"))
+        if (time1 === time2) {
+            console.log("Os times estão empatados")
+        } else if (time1 > time2) {
+            console.log("Time 1 está ganhando.")
+        }   else {
+                console.log("Time 2 esta ganhando")
+        }
+
+        console.log("Exercicio 16")
+        let idade = Number(prompt("Digite sua idade"))
+        if (idade < 18 && idade > 16) {
+            console.log("Voto opcional")
+        } else if (idade > 18 && idade < 70 ) {
+            console.log("Obrigatório votar")
+        }       else {
+            console.log("Nao precisa votar")
+            }
+
+        console.log("Exercicio 17")
         
     </script>
 </body>

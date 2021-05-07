@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Exercicio 1")
+
+        {let i = 0
+            while (i < 10) {
+                console.log("Ola Mundo!")
+                i++
+            }
+        }
+        {let i = 0
+        
+        do {
+            console.log("Ola Mundo!")
+            i++
+        } while (i < 10)}      
+        {for (let i = 0; i < 10; i++) {
+            console.log("Ola Mundo!")
+        }}
+
+        console.log("Exercicio 2")
+
+        {let i = 1
+            while (i < 11) {
+                console.log(`Estou aparecendo pela ${i}° vez na tela!`)
+                i++
+            }
+        }
+
+        {let i = 1
+        do {
+            console.log(`Estou aparecendo pela ${i}° vez na tela!`)
+            i++
+        } while (i < 11)
+        }
+
+        {for (let i = 1; i < 11; i++) {
+            console.log(`Estou aparecendo pela ${i}° vez na tela!`)
+            
+        }}
+
+        console.log("Exercicio 3")
+
+        {
+            let i = 10
+            while (i > 0) {
+                console.log(i)
+                i--
+            
+            } 
+        
+            console.log("FIM");
+
+           { for (let i = 10; i > 0; i--) {
+                console.log(i)
+                
+            }   
+                console.log("Fim");
+            }
+        }
+
+        console.log("Exercicio 4")
+
+        {
+            for (let i = 0; i < 3; i++) {
+                let numero1 = +prompt("Digite um numero")
+                let numero2 = +prompt("Digite um numero")
+
+                let subtracao = numero1 - numero2
+
+                console.log(`${numero1} - ${numero2} = ${subtracao}`)
+            }
+        }
+
+        console.log("Exercicio 5")
+
+        {
+           for (let i = 0; i < 100001; i+= 1000) {
+                console.log(i);
+            }
+       } 
+    
+        console.log("Exercicio 6")
+
+        {
+            while (true) {
+            let valor = Number(prompt("Digite um número"))
+            
+            if (!valor) {
+                break
+            }
+
+                soma += valor
+            }
+                console.log(`Soma: ${soma}`)
+        }
+    </script>
+</body>
+</html>

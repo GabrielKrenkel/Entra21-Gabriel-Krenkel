@@ -150,6 +150,25 @@
             }
 
         console.log("Exercicio 17")
+        let number1 = Number(prompt("Insira um número"))
+        let number2 = Number(prompt("Insira um número"))
+        let number3 = Number(prompt("Insira um número"))
+        
+        if (number1 > number2 && number1 > number3) {
+            if (number2 > number3) console.log(number1, number2, number3)
+            else console.log(number1, number3, number2)
+        } else if (number2 > number3) {
+            if (number1 > number3) console.log(number2, number1, number3)
+            else console.log(number2, number3, number1)
+        } else if (number2 > number1 && number2 > number3){
+            if (number1 > number3) console.log(number2, number1, number3)
+            else console.log(number2, number3, number1)
+        } else {
+            if (number1 > number2) console.log(number3, number1, number2)
+            else console.log(number3, number2, number1)
+        
+            console.log("Exercicio 18")
+            
         
     </script>
 </body>

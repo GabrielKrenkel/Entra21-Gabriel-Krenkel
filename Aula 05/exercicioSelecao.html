@@ -121,8 +121,8 @@
         console.log("Exercicio 14")
         let salario = Number(prompt("Insira o seu salário"))
         let vEmprestimo = Number(prompt("Insira a parcela do empréstimo."))
-        let naoultrapassar = salario / 5 + salario
-        if (naoultrapassar > vEmprestimo) {
+        let naoUltrapassar = salario / 5 + salario
+        if (naoUltrapassar > vEmprestimo) {
             console.log("empréstimo concedido")
         } else {
             console.log("empréstimo não concedido")
@@ -153,7 +153,6 @@
         let number1 = Number(prompt("Insira um número"))
         let number2 = Number(prompt("Insira um número"))
         let number3 = Number(prompt("Insira um número"))
-        
         if (number1 > number2 && number1 > number3) {
             if (number2 > number3) console.log(number1, number2, number3)
             else console.log(number1, number3, number2)
@@ -166,10 +165,19 @@
         } else {
             if (number1 > number2) console.log(number3, number1, number2)
             else console.log(number3, number2, number1)
-        
-            console.log("Exercicio 18")
-            
-        
+        }
+
+        console.log("Exercicio 18")
+        let idadeDoador = Number(prompt("Digite sua idade:"))
+        if (idadeDoador > 67 || idadeDoador < 18 ) {
+            console.log("Voce nao pode doar sangue.")
+        }   else {
+            console.log("Voce pode doar sangue")
+        }
+
+        console.log("Exercicio 19")
+        let diaSemana = Number(prompt("Digite um dia da semana"))
+
     </script>
 </body>
 </html>

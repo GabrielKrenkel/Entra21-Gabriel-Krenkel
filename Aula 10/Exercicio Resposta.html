@@ -8,46 +8,48 @@
 <body>
     <script>
         console.log("Exercicio 1")
-
-        {let i = 0
+        {
+            let i = 0
             while (i < 10) {
                 console.log("Ola Mundo!")
                 i++
             }
         }
-        {let i = 0
-        
-        do {
-            console.log("Ola Mundo!")
-            i++
-        } while (i < 10)}      
-        {for (let i = 0; i < 10; i++) {
-            console.log("Ola Mundo!")
-        }}
+        {
+            let i = 0
+            do {
+                console.log("Ola Mundo!")
+                i++
+            }  while (i < 10)
+        }      
+        {
+            for (let i = 0; i < 10; i++) {
+                console.log("Ola Mundo!")
+            }
+        }
 
         console.log("Exercicio 2")
-
-        {let i = 1
+        {
+            let i = 1
             while (i < 11) {
                 console.log(`Estou aparecendo pela ${i}° vez na tela!`)
                 i++
             }
         }
-
-        {let i = 1
-        do {
-            console.log(`Estou aparecendo pela ${i}° vez na tela!`)
-            i++
-        } while (i < 11)
+        {
+            let i = 1
+            do {
+                console.log(`Estou aparecendo pela ${i}° vez na tela!`)
+                i++
+            } while (i < 11)
+        }
+        {
+            for (let i = 1; i < 11; i++) {
+                console.log(`Estou aparecendo pela ${i}° vez na tela!`)
+            }
         }
 
-        {for (let i = 1; i < 11; i++) {
-            console.log(`Estou aparecendo pela ${i}° vez na tela!`)
-            
-        }}
-
         console.log("Exercicio 3")
-
         {
             let i = 10
             while (i > 0) {
@@ -67,7 +69,6 @@
         }
 
         console.log("Exercicio 4")
-
         {
             for (let i = 0; i < 3; i++) {
                 let numero1 = +prompt("Digite um numero")
@@ -80,7 +81,6 @@
         }
 
         console.log("Exercicio 5")
-
         {
            for (let i = 0; i < 100001; i+= 1000) {
                 console.log(i);
@@ -88,18 +88,77 @@
        } 
     
         console.log("Exercicio 6")
-
         {
-            while (true) {
-            let valor = Number(prompt("Digite um número"))
+            let i = 0
+            let adicao = 0
+            let media = 0
+            while (i <= 5) {
+                
+                let valor = Number(prompt("Digite um número"))
+                i++
+                    if (i > 5) {
+                        break
+                    }
+                
+                adicao += valor
+                media = adicao / 5
+            }   
             
-            if (!valor) {
-                break
-            }
+                console.log(`Soma: ${adicao} Média: ${media.toFixed(2)}`) 
+        }
 
-                soma += valor
+        console.log("Exercicio 7")
+        {
+            let numero = +prompt("Digite um numero.")
+            for (let i = 0; i < numero; i++) {
+                if (i % 2 == 0) {
+                    continue
+                 }
+
+            console.log(i)
+        }
+        }
+
+        console.log("Exercicio 8")
+        {
+            let numero = +prompt("Digite um numero.")
+            for (let i = 0; i <= 10; i++) {
+                console.log(`${numero} x ${i} = ${numero * i}`)
             }
-                console.log(`Soma: ${soma}`)
+        }
+
+        console.log("Exercicio 9")
+        {
+            let i = 0
+            let negativo = 0
+            let numero = 0
+            while (i < 5) {
+            numero = +prompt("Digite um numero.")
+            i++ 
+                if (numero >= 0) {
+                     continue   
+                }
+            negativo ++
+            }
+            console.log(`Numeros negativos: ${negativo}`)
+        }
+        
+        console.log("Exercicio 10")
+        {
+            let i = 0
+            let numero = 0
+            let impar = 0
+            let par = 0
+            while (i < 10) {
+                numero = +prompt("Digite um numero")
+                i++
+                    if (numero % 2 == 0) {
+                        par ++
+                        continue
+                    }
+                impar ++
+            }
+            console.log(` Impares: ${impar}\n Pares: ${par}`)
         }
     </script>
 </body>

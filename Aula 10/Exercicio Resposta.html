@@ -160,6 +160,22 @@
             }
             console.log(` Impares: ${impar}\n Pares: ${par}`)
         }
+
+        console.log("Exercicio 11")
+        {
+            let numero = 0
+            let dentro = 0
+            let fora = 0
+            while (numero >= 0) {
+            numero = +prompt("Digite um numero")
+                if (numero >= 10 && numero <= 20) {
+                    dentro ++
+                    continue
+                }
+            fora ++
+            }    
+            console.log(`${dentro} estão entre o intervalo.\n${--fora} estão fora do intervalo`)
+        }
     </script>
 </body>
 </html>

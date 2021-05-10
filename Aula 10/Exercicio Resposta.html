@@ -114,9 +114,8 @@
                 if (i % 2 == 0) {
                     continue
                  }
-
-            console.log(i)
-        }
+            }
+                console.log(i)
         }
 
         console.log("Exercicio 8")
@@ -175,6 +174,38 @@
             fora ++
             }    
             console.log(`${dentro} estão entre o intervalo.\n${--fora} estão fora do intervalo`)
+        }
+
+        console.log("Exercicio 12")
+        {
+            let numero = 0
+            let i = 0
+            let soma = 0
+            let media = 0
+                while (numero >= 0) {
+                    numero = +prompt("Digite um numero.")
+                        if (numero < 0) {
+                            break
+                        }
+                i++
+                soma += numero
+                media = soma / i
+           }
+           console.log(media);
+        }
+
+        console.log("Exercicio 13")
+        {
+            let i = 1
+            let mutiplos = " "
+            while (i <= 15) {
+                resultado = i * 7
+                    if (resultado === i * 7) {
+                        mutiplos += " " + resultado
+                    }   
+                i++
+            }
+            console.log(` ${mutiplos} `)
         }
     </script>
 </body>

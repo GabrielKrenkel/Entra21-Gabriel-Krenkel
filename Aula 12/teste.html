@@ -8,15 +8,22 @@
 </head>
 <body>
     <script>
-            let A = [],
-                numero,
-                soma
-            for (let i = 0; i < 6; i++) {
-                A[i] = +prompt(`Digite o ${i + 1}° numero`)
+        let vetor1 = [], vetor2 = [], contador = 0, maior, menor
+        for (let i = 0; i < 5; i++) {
+            vetor1[i] = +prompt("Digite um numero")
+            vetor2[i] = vetor1
+        }
+        for (let i = 5; i >= 0;) {
+            if (vetor1[contador] > vetor2[i]) {
+                maior = vetor1[contador]
+                i - 1
+                continue
+            }   else if (vetor1[contador] < vetor2[i]) {
+                menor = vetor2[i] 
+                contador--
             }
-             
-                       
-            console.log(A);
+        }
+        console.log(menor, maior);
     </script>
 </body>
 </html>

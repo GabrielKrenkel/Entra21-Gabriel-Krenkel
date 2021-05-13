@@ -112,8 +112,107 @@
     
         console.log("Exercicio 6")
         { 
-            
+            let A = [1, 0, 5, -2, -5, 7],
+            soma = A[0] + A[1] + A[5]
+            A[3] = 100
+            console.log(`soma é ${soma}`);
+            for (let i = 0; i < 5; i++) {
+                console.log(`O indice ${i} = ${A[i]}`)
+            }
         } 
+    
+        console.log("Exercicio 7")
+        {
+            let vetorNumero = [], vetorResultado = []
+            for (let i = 0; i < 5; i++) {
+                vetorNumero[i] = +prompt(`Digite o ${i + 1}° numero`)
+                vetorResultado[i] = vetorNumero[i] ** 2
+            }
+            console.log(vetorNumero, vetorResultado);
+        }
+    
+        console.log("Exercicio 8")
+        {
+            let vetor = [], numero, contador
+            for (let i = 0; i < 6;) {
+                numero = +prompt(`Digite um valor que seja par`)
+                if (numero % 2 != 0 || numero <= 0) {
+                    alert("Valor invalido digite um numero par")
+                    continue
+                }   else {
+                        vetor[i] = numero
+                        i++
+                    }
+            }
+            for (let i = vetor.length - 1 ; i >= 0; i--) {
+                console.log(vetor[i])
+            }
+        }
+    
+        console.log("Exercicio 9")
+        {
+            let vetor = [], numeroVerificar = [], somar = 0
+            for (let i = 0; i < 8; i++) {
+                vetor[i] = +prompt("Digite um valor para armazernar")   
+            }
+            for (let i = 0; i < 2;) {
+                numeroVerificar = +prompt("Digite um valor para verificar e adicionar a soma")
+                switch (numeroVerificar) {
+                    case vetor[0]:
+                        somar += numeroVerificar
+                        i++
+                        break;
+                    case vetor[1]:
+                        somar += numeroVerificar
+                        i++
+                        break;
+                    case vetor[2]:
+                        somar += numeroVerificar
+                        break;
+                    case vetor[3]:
+                        somar += numeroVerificar
+                        i++
+                        break;
+                    case vetor[4]:
+                        somar += numeroVerificar
+                        i++
+                        break;
+                    case vetor[5]:
+                        somar += numeroVerificar
+                        i++
+                        break;
+                    case vetor[6]:
+                        somar += numeroVerificar
+                        i++
+                        break;
+                    case vetor[7]:
+                        somar += numeroVerificar
+                        i++
+                        break;        
+                    default:
+                        alert("Valores incorretos, tente novamente.")
+                        break;
+                }
+            }
+            console.log(`A soma de ambos numeros é ${somar}`)
+        }
+    
+        console.log("EXercicio 10")
+        {
+            let vetor = [], somar = 0, negativos = 0
+            for (let i = 0; i < 10; i++) {
+                vetor[i] = +prompt("Digite um valor para armazernar")  
+                if (vetor[i] < 0) {
+                    negativos++
+                } else {
+                    somar += vetor[i]
+                }
+            }
+            console.log(`quantidade de numeros negativos = ${negativos}\nSoma dos numeros positivos = ${somar}`)
+        }
+    
+        console.log("Exercicio 11")
+        
     </script>
 </body>
 </html>

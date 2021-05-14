@@ -8,19 +8,29 @@
 </head>
 <body>
     <script>  
-            let numero = +prompt("Digite um numero.")
-            let impares = ""
-            let i = 0
-            while (i <= numero) {
-                i++
-                    if (i % 2 != 0) {
-                        impares += i
-                    }       else if (i % 2 == 0) {
-                                impares + ","
-                            }
-                
+            let contadorNumerosPrimos = 0
+            let numeroAtual = 2    
+            let flag = false
+            let primos = ""
+
+            while (contadorNumerosPrimos < 20) {            
+                for (let i = 2; i < numeroAtual; i++) {
+                    if (numeroAtual % i === 0) {
+                        flag = true
+                        break
+                    }
+                }
+
+                if (!flag) {
+                    primos += `${numeroAtual} `
+                    contadorNumerosPrimos++
+                }
+
+                flag = false
+                numeroAtual++
             }
-            console.log(impares);  
+
+            console.log(primos)
     </script>
 </body>
 </html>

@@ -8,17 +8,17 @@
 </head>
 <body>
     <script>
-        let vetor1 = [], vetor2 = [], contador = 0, maior, menor
+        let vetor1 = [], vetor2 = [], contador = 0, maior = 0, menor = 0
         for (let i = 0; i < 5; i++) {
             vetor1[i] = +prompt("Digite um numero")
             vetor2[i] = vetor1
         }
         for (let i = 5; i >= 0;) {
-            if (vetor1[contador] > vetor2[i]) {
+            if (vetor1[contador] > vetor2[i] && contador < 5) {
                 maior = vetor1[contador]
-                i - 1
+                i--
                 continue
-            }   else if (vetor1[contador] < vetor2[i]) {
+            }   else if (vetor1[contador] < vetor2[i] && contador < 5) {
                 menor = vetor2[i] 
                 contador--
             }

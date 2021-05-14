@@ -114,12 +114,10 @@
 
             for (let i = 1; i <= numero; i += 2) {
                 resultado += i
-                    if (i < numero - 1) resultado += ", "
-}
-
-alert(resultado)
+                if (i < numero - 1) resultado += ", "
             }
-            console.log(impares);
+
+            alert(resultado)
         }
 
         console.log("Exercicio 8")
@@ -294,27 +292,103 @@ alert(resultado)
     
             if (voto === 0) break
 
-            switch (voto) {                
-                case 1:
-                    totalVotosJose++
-                    break
-                case 2:
-                    totalVotosMaria++
-                    break
-                case 3:
-                    totalVotosJoao++
-                    break
-                case 4: 
-                    totalNulos++
-                    break
-                case 5:
-                    totalBranco++
-                    break
-                default:
-                    console.log("Não foi possivel entender sua opção.")
+                switch (voto) {                
+                    case 1:
+                        totalVotosJose++
+                        break
+                    case 2:
+                        totalVotosMaria++
+                        break
+                    case 3:
+                        totalVotosJoao++
+                        break
+                    case 4: 
+                        totalNulos++
+                        break
+                    case 5:
+                        totalBranco++
+                        break
+                    default:
+                        console.log("Não foi possivel entender sua opção.")
+                }
+            }
+            console.log(`Total de Votos\nJosé Bolinha: ${totalVotosJose} voto(s)\nMaria Nascimento: ${totalVotosMaria} voto(s)\nJoão da Silva: ${totalVotosJoao} voto(s)\nVotos Nulos: ${totalNulos} voto(s)\nVotos em Branco: ${totalBranco} voto(s)`)
+        }
+     
+        console.log("Exercicio 18")
+        {
+            for(let i = 0; i < 4; i++) {
+                let media = Number(prompt("Digite a média"))
+
+                if (media < 0 || media > 10) {
+                    console.log("Valor inválido")
+                } else if (media < 5 && media >= 0) {
+                    console.log("Conceito D")
+                } else if (media < 7) {
+                    console.log("Conceito C")
+                } else if (media < 9) {
+                    console.log("Conceito B")
+                } else {
+                    console.log("Conceito A")
+                }
             }
         }
-        console.log(`Total de Votos\nJosé Bolinha: ${totalVotosJose} voto(s)\nMaria Nascimento: ${totalVotosMaria} voto(s)\nJoão da Silva: ${totalVotosJoao} voto(s)\nVotos Nulos: ${totalNulos} voto(s)\nVotos em Branco: ${totalBranco} voto(s)`)
+
+        console.log("Exercicio 19")
+        {
+            while (true) {
+                let matricula = Number(prompt("Qual a matricula do aluno? "))
+                if (matricula === 0) {
+                    break
+                }
+                let nota1 = Number(prompt("Qual a primeira nota? "))
+                let nota2 = Number(prompt("Qual a segunda nota? "))
+                let nota3 = Number(prompt("Qual a terceira nota? "))
+
+                let media = (nota1 + nota2 + nota3) / 3
+
+                console.log(` A média do aluno com a matricula ${matricula} é ${media.toFixed(2)}`)
+            }
+        }
+
+        console.log("Exercicio 20")
+        {
+            let menorNumero = Number(prompt("O menor Número"))
+            let maiorNumero = Number(prompt("Digite o maior Número"))
+            let somaPar = 0
+            let multiplicaImpar = 1
+
+            for (let i = menorNumero; i <= maiorNumero; i++) {            
+                i % 2 == 0 ? somaPar += i : multiplicaImpar *= i
+            }
+            console.log(`Soma dos pares: ${somaPar}\nMultiplição dos Impares: ${multiplicaImpar}`)
+        }
+
+        console.log("Exercicio 21")
+        {
+            let contadorNumerosPrimos = 0
+            let numeroAtual = 2    
+            let flag = false
+            let primos = ""
+
+            while (contadorNumerosPrimos < 20) {            
+                for (let i = 2; i < numeroAtual; i++) {
+                    if (numeroAtual % i === 0) {
+                        flag = true
+                        break
+                    }
+                }
+
+                if (!flag) {
+                    primos += `${numeroAtual} `
+                    contadorNumerosPrimos++
+                }
+
+                flag = false
+                numeroAtual++
+            }
+            console.log(primos)
+        }
     </script>
 </body>
 </html>

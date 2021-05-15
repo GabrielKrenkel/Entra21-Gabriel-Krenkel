@@ -8,22 +8,16 @@
 </head>
 <body>
     <script>
-        let vetor1 = [], vetor2 = [], contador = 0, maior = 0, menor = 0
-        for (let i = 0; i < 5; i++) {
-            vetor1[i] = +prompt("Digite um numero")
-            vetor2[i] = vetor1
-        }
-        for (let i = 5; i >= 0;) {
-            if (vetor1[contador] > vetor2[i] && contador < 5) {
-                maior = vetor1[contador]
-                i--
-                continue
-            }   else if (vetor1[contador] < vetor2[i] && contador < 5) {
-                menor = vetor2[i] 
-                contador--
+        let vetor = [], resultado = []
+        for (let i = 0; i < 2; i++) {
+            vetor[i] = +prompt("Digite um numero")
+        } 
+        for (let i = vetor[0]; i <= vetor[1]; i + 2) {
+            for (let j = 0; i <= vetor[1]; j++) {
+                resultado[j] = i
             }
         }
-        console.log(menor, maior);
+        console.log(resultado);
     </script>
 </body>
 </html>

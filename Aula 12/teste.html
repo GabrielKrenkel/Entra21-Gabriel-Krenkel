@@ -8,16 +8,19 @@
 </head>
 <body>
     <script>
-        let vetor = [], resultado = []
-        for (let i = 0; i < 2; i++) {
-            vetor[i] = +prompt("Digite um numero")
-        } 
-        for (let i = vetor[0]; i <= vetor[1]; i + 2) {
-            for (let j = 0; i <= vetor[1]; j++) {
-                resultado[j] = i
+        let vetor = [], soma = 0, multiplicar = [], contador = 0, multiplicacao = 0
+        for (let i = 0; i < 10; i++) {
+            vetor[i] = Math.random().toFixed(1) * 10
+            if (vetor[i] % 2 === 0) {
+                soma += vetor[i]
+            } else if (vetor[i] % 2 != 0) {
+                multiplicar[contador] = vetor[i]
+                contador++
             }
         }
-        console.log(resultado);
+        for (let i = 0; i < multiplicar.length - 1; i++)  {
+               multiplicar[1] * multiplicar[2] * 
+        }
     </script>
 </body>
 </html>

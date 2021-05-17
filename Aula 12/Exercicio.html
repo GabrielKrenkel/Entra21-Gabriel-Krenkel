@@ -23,8 +23,8 @@
         console.log("Exercicio 2")
         {
             let vetor = [],
-            maior, 
-            posicao 
+                maior, 
+                posicao 
             for (let i = 0; i < 5; i++) {
                 vetor[i] = +prompt("Digite um numero")
                     if (i === 0) {
@@ -133,7 +133,7 @@
     
         console.log("Exercicio 8")
         {
-            let vetor = [], numero, contador
+            let vetor = [], numero 
             for (let i = 0; i < 6;) {
                 numero = +prompt(`Digite um valor que seja par`)
                 if (numero % 2 != 0 || numero <= 0) {
@@ -156,37 +156,37 @@
                 vetor[i] = +prompt("Digite um valor para armazernar")   
             }
             for (let i = 0; i < 2;) {
-                numeroVerificar = +prompt("Digite um valor para verificar e adicionar a soma")
-                switch (numeroVerificar) {
+                numeroVerificar[i] = +prompt("Digite um valor para verificar e adicionar a soma")
+                switch (numeroVerificar[i]) {
                     case vetor[0]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         i++
                         break;
                     case vetor[1]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         i++
                         break;
                     case vetor[2]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         break;
                     case vetor[3]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         i++
                         break;
                     case vetor[4]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         i++
                         break;
                     case vetor[5]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         i++
                         break;
                     case vetor[6]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         i++
                         break;
                     case vetor[7]:
-                        somar += numeroVerificar
+                        somar += numeroVerificar[i]
                         i++
                         break;        
                     default:
@@ -194,7 +194,7 @@
                         break;
                 }
             }
-            console.log(`A soma de ambos numeros é ${somar}`)
+            console.log(`A soma de ${numeroVerificar[0]} e ${numeroVerificar[1]} é ${somar}`)
         }
     
         console.log("EXercicio 10")
@@ -229,22 +229,30 @@
                             numeroMenor = vetor[i]
                             posicaoMenor = i
                         }
-
             }
+
         }
     
         console.log("Exercicio 12")
         {
-            let vetor = [], numero1 = 0, numero6 = 0
+            let vetor = [], numero1 = 0, numero6 = 0, numero2 = 0, numero3 = 0, numero4 = 0, numero5 = 0
             for (let i = 0; i < 100; i++) {
-                vetor[i] = Math.random().toFixed(1) * 10
+                vetor[i] = Math.floor(Math.random() * (7 - 1)) + 1
                 if (vetor[i] == 6) {
                     numero6 ++
+                } else if (vetor[i] == 5) {
+                    numero5 ++
+                } else if (vetor[i] == 4) {
+                    numero4 ++
+                } else if (vetor[i] == 3) {
+                    numero3 ++
+                } else if (vetor[i] == 2) {
+                    numero2 ++
                 } else if (vetor[i] == 1) {
                     numero1 ++
                 }
             }
-            console.log(vetor , numero1, numero6);
+            console.log(vetor , numero1, numero2, numero3, numero4, numero5, numero6);
         }
 
         console.log("Exercicio 13")
@@ -332,7 +340,115 @@
 
         console.log("Exercicio 17")
         {
+            let vetor = []
+            for (let i = 0; i < 10; i++) {
+                vetor[i] = Math.floor(Math.random() * (11 - 1)) + 1
+            }
+
+            console.log(`Vetor: ${vetor}\n`)   
             
+            // Bubble sort
+            let ultimoIndiceVetor = vetor.length - 1,
+                trocou
+
+            for (let i = 0; i < ultimoIndiceVetor; i++) {
+                trocou = false
+                for (let j = 0; j < ultimoIndiceVetor; j++) {
+                    if (vetor[j] > vetor[j + 1]) {
+                        let aux = vetor[j]
+                        vetor[j] = vetor[j + 1]
+                        vetor[j + 1] = aux
+
+                        trocou = true
+                    }
+                }
+
+                if (!trocou) break
+            }
+
+            console.log(`Vetor ordenado: ${vetor}`)
+        }
+    
+        console.log("Exercicio 18")
+        {
+            let vetor = [],
+            somaPares = 0,
+            multiplicacaoImpares = 1
+
+            for (let i = 0; i < 10; i++) {
+                vetor[i] = Math.floor(Math.random() * (11 - 1)) + 1
+                vetor[i] % 2 === 0 ? somaPares += vetor[i] : multiplicacaoImpares *= vetor[i]                                
+            }
+
+            console.log(`Vetor: ${vetor}\nSoma dos pares: ${somaPares}\nMultiplicação ímpares: ${multiplicacaoImpares}`)
+        }
+    
+        console.log("Exercicio 19")
+        {
+            let texto = "Sem trocar que o espinho é seco.\nSem trocar que seco é ser sol.\nSem trocar que algum espinho seco secará."
+            console.log(texto)
+            
+            let vetorTexto = texto.split(" ")
+            
+            for (let i = 0, tamanhoVetor = vetorTexto.length; i < tamanhoVetor; i++) {
+                if (vetorTexto[i] === "trocar") {
+                    vetorTexto[i] = "sacar"
+                }
+            }
+
+            texto = vetorTexto.join(" ")
+            console.log(texto)
+        }
+    
+        console.log("Exercicio 20")
+        {
+            let notas = [],
+            acumuladorNotas = 0
+
+            for (let i = 0; i < 10; i++) {
+                notas[i] = +prompt(`Digite a ${i + 1}a nota`)
+                acumuladorNotas += notas[i]
+            }
+
+            let media = acumuladorNotas / 10
+
+            console.log(`Notas: ${notas}\nMédia: ${media.toFixed(2)}\nNotas acima da média:`)
+            for (let i = 0; i < 10; i++) {
+                if (notas[i] > media) {
+                    console.log(notas[i])
+                }
+            }
+        }
+
+        console.log("Exercicio 21")
+        {
+            let produtos = [],
+            precos = [],
+            produtosPrecoEspecial = [],
+            inferior50 = 0,
+            acumuladorMaior100 = 0,
+            contadorMaior100 = 0
+
+                for (let i = 0; i < 5; i++) {
+                    produtos[i] = prompt(`Digite o nome do ${i + 1} produto`)
+                    precos[i] = +prompt(`Digite o preço do ${i + 1} produto`)
+
+                    if (precos[i] < 50) {
+                        inferior50++
+                    } else if (precos[i] <= 100) {
+                        produtosPrecoEspecial.push(produtos[i])
+                    } else {
+                        acumuladorMaior100 += precos[i]
+                        contadorMaior100++
+                    }
+                }   
+
+            let mediaPrecosMaior100 = acumuladorMaior100 / contadorMaior100
+
+            console.log(`Produtos: ${produtos}\nPreços:${precos}`)
+            console.log(`Quantidade de produtos com preço inferior a R$ 50,00: ${inferior50}`)
+            console.log(`Produtos com preço entre R$ 50,00 e R$ 100,00: ${produtosPrecoEspecial}`)
+            console.log(`Média dos preços dos produtos com preço superior a R$ 100,00: ${mediaPrecosMaior100.toFixed(2)}`)
         }
     </script>
 </body>

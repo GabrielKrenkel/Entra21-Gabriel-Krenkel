@@ -56,13 +56,14 @@
             }
             localizar = +prompt("Digite um numero para verificar-mos")
 
+            lacoExterno:
             for (let linhas = 0; linhas < 3; linhas++) {
                 for (let coluna = 0; coluna < 3; coluna++) {
                     if (localizar == matriz1[linhas][coluna]) {
                         flag = true
                         linhaSalvar = linhas
                         colunaSalvar = coluna
-                        break
+                        break lacoExterno
                     } 
                 }
             }
@@ -92,7 +93,7 @@
                 matrizMaior[linha] = []
 
                 for (let coluna = 0; coluna < 3; coluna++) {
-
+                    
                     if (matriz1[linha][coluna] > matriz2[linha][coluna]) {
                         matrizMaior[linha][coluna] = matriz1[linha][coluna] 
 

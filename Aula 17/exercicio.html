@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Exercicio 1")
+        {
+            function ehNumero(numero) {
+                    if (numero > 0) {
+                        return true
+                    }
+                return false
+            }
+
+            let numero = +prompt("Digite um numero")
+            console.log(ehNumero(numero))
+        }
+
+        console.log("Exercicio 2")
+        {
+            function minimo() {
+                if (a > b) {
+                    return `Numero ${b} é menor numero`
+                }
+            return `Numero ${a} é o menor numero`
+            }
+
+            a = +prompt("Digite um valor", 0)
+            b = +prompt("Digite outro numero", 0)
+            console.log(minimo())
+        }
+
+        console.log("Exercicio 3")
+        {
+            function potencia() {
+                resultado = a ** b
+            }
+
+            let resultado 
+            let a = +prompt("Digite um valor")
+            let b = +prompt("Agora digite o expoente")
+            potencia()
+            console.log(resultado)
+        }
+
+        console.log("Exercicio 4")
+        {
+            let nota = [], media, soma = 0, quantidadeDividir        
+            function calculaMedia(media, soma, expoente) {
+            media = soma / quantidadeDividir
+            return media
+            }
+            for (let i = 0; i < 3;) {
+                nota[i] = +prompt(`Digite a ${i + 1}° nota`)
+                soma += nota[i]
+                quantidadeDividir = nota.length
+                i++
+            }
+            
+            console.log(calculaMedia(media, soma, quantidadeDividir))
+        }
+
+        console.log("Exercicio 5")
+        {
+            function verificaMedia(media) {
+                if (media > 9) {
+                    return "A"
+                } else if (media > 7 && media < 8.9) {
+                return "B" 
+                } else if (media > 5 && media <6.9) {
+                    return "C"
+                } else {
+                    return "D"
+                }
+            }
+
+            let media = +prompt("Digite a media do aluno")
+            console.log(verificaMedia(media))
+        }
+
+        console.log("Exercicio 6")
+        {
+            function calculaPesoIdeal(altura, sexo) {
+                if (sexo === "M") {
+                    return 62.1 * altura - 44.7
+                } else if (sexo === "H") {
+                return 72.7 * altura - 58 
+                }
+                
+            }
+            let sexo = ""
+            for (let i = 0; i < 1;) {
+                sexo = prompt("Digite seu sexo\nSendo (M) Mulher e (H) Homem").toUpperCase()
+                if (sexo === "M" || sexo === "H") {
+                    i++
+                } else {
+                    alert("Valor invalido\nTente novamente")
+                }
+            }
+            let altura = +prompt("Digite sua altura")
+            
+            console.log(calculaPesoIdeal(altura, sexo).toFixed(2))
+        }
+
+        console.log("Exercicio 7")
+        {
+            let valores = [], maior, menor
+            function verificaValores() {
+                for (let j = 0; j < 50; j++) {
+                    if (j === 0) {
+                        maior = valores[j]
+                        menor = valores[j]
+                    } else if (valores[j] > maior) {
+                        maior = valores[j]
+                    } else if (valores[j] < menor) {
+                        menor = valores[j]
+                    } else if (j > 48) {
+                        return maior, menor
+                    }
+                    
+                }
+            }
+            for (let i = 0; i < 50; i++) {
+                    valores[i] = Math.floor(Math.random() * (1000 - 1) + 1)
+                }
+            verificaValores(valores)
+            console.log(`O maior valor é: ${maior}\nO menor valor é: ${menor}`)
+        }
+
+        console.log("Exercicio 8")
+        {
+            
+        }
+    </script>
+</body>
+</html>

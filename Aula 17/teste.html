@@ -10,7 +10,22 @@
 
 <body>
     <script>
-        
+       function cadastraNumeros() {
+                let numeros = []
+                for (let i = 0; i < 50; i++) {
+                    numeros[i] = Math.floor(Math.random() * 1000) + 1
+                }
+
+                return numeros
+            }        
+
+            let numeros = cadastraNumeros()
+            console.log(numeros)
+
+            numeros.sort((a, b) => a - b)
+            numeros.reverse
+
+            console.log(numeros)
     </script>
 </body>
 

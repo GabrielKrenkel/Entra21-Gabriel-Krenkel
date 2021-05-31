@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            /*
+            1) Crie o objeto contador com 5 métodos:
+            incrementa() -> Incrementa o contador em 1
+            decrementa() -> Decrementa o contador em 1
+            incrementaEm(quantidade) -> Incrementa o contador na quantidade especificada
+            decrementaEm(quantidade) -> Decrementa o contador na quantidade especificada
+            mostraContador() -> Mostra o valor do contador
+            O contador inicia em 0.
+            */
+            {
+                let contador = {
+                    posicao: 0,
+                    incrementar() {
+                        this.posicao++
+                    },
+                    decrementar() {
+                        this.posicao--
+                    },
+                    incrementarEm(quantidade) {
+                        this.posicao+= quantidade
+                    },
+                    decrementarEm(quantidade) {
+                        this.posicao-= quantidade
+                    },
+                    mostrarContador() {
+                        alert(this.posicao)
+                    }
+                }
+            }
+            /*
+            2) Crie o objeto calculadora com três métodos:
+            lerValores() -> pede dois valores ao usuário e os salva como
+            propriedades.
+            soma() -> retorna a soma dos valores salvos
+            multiplicacao() -> retorna a multiplicação dos valores salvos.
+            */
+
+            /*
+            1) Escreva a função estaVazio(objeto) que retorna true se o objeto não possuir 
+                propriedades, falso em caso contrário.
+            */
+            {
+                let objeto = {}
+
+                function estaVazio(objeto) {
+                    if (Object.values(objeto).length === 0) {
+                        return true
+                    }
+                return false
+                }
+            }
+            /*
+            2) Dado o objeto:
+            let objeto = {
+                p1: 20,
+                p2: 50,
+                p3: 85,
+                p4: "Olá",
+                p5: "Teste"
+                p6: "string",
+                p7: 10 
+            }
+
+            Construir uma função que some todas as propriedades númericas do objeto.
+            E as mostre na tela.
+            */
+            {
+                let soma = 0
+                let objeto = {
+                    p1: 20,
+                    p2: 50,
+                    p3: 85,
+                    p4: "Olá",
+                    p5: "Teste",
+                    p6: "string",
+                    p7: 10 
+                }
+                function soma_Verifica(propiedade) {
+                    for (let key in objeto) {
+                        if (isNaN(key) != true) {
+                            soma += key
+                        }
+                    }
+                }
+                alert(soma)
+            }
+            /*
+            3) Adapte o trabalho de funções para armazenar as informações em um objeto.
+            */
+            {
+                
+            }
+    </script>
+</body>
+</html>

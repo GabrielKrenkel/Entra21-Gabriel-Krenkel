@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background-color: #40404a ;
+}
+.text, .font {
+    color: honeydew;
+}
+#one, .link, h2 {
+    color: #d1e8a0;
+}
+#one {
+    border: 1px  #d1e8a0;
+} 
+
+.font {
+    font-size: 11px;
+}

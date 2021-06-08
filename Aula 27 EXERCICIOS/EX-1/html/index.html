@@ -8,7 +8,7 @@
     <title>Stellar | HTML5 UP</title>
 </head>
 <body>  
-    <div id="wharpper">
+    <div id="wharpper" class="back">
             <header id="header" class="alt">
                 <img src="https://html5up.net/uploads/demos/stellar/images/logo.svg" alt="">
                     <h1>Stellar</h1>
@@ -18,16 +18,16 @@
             </header>
             <nav id="nav" class="alt">
                 <ul>
-                    <li>Introductions</li>
-                    <li>First Section</li>
-                    <li>Second Section</li>
-                    <li>Get Started</li>
+                    <li class="nav_item"><a href="#intro">Introductions</a></li>
+                    <li class="nav_item"><a href="#first">First Section</a></li>
+                    <li class="nav_item"><a href="#second">Second Section</a></li>
+                    <li class="nav_item"><a href="#cta">Get Started</a></li>
                 </ul>
             </nav>
             <div id="main">
                     <section id="intro" class="main">
                         <div>
-                           <h2>Ipsum sed adipiscing <br> <br>
+                           <h2>Ipsum sed adipiscing <br>
                             ---------------------
                            </h2>
                             <p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
@@ -65,24 +65,24 @@
                         ---------------------</h2>
                         <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue
                             posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-                        <ul>
-                            <li><i class="fas fa-code-branch fa-3x"></i><br>
+                        <ul id="imgs">
+                            <li id="one" class="block"><i class="fas fa-code-branch fa-3x"></i><br>
                                 <strong>5,120</strong>
                                 <p>Etiam</p>
                             </li>
-                            <li><i class="far fa-folder-open fa-3x"></i><br>
+                            <li id="two" class="block"><i class="far fa-folder-open fa-3x"></i><br>
                                 <strong>8,192</strong>
                                 <p>Magna</p>
                             </li>
-                            <li><i class="fas fa-signal fa-3x"></i><br>
+                            <li id="tree" class="block"><i class="fas fa-signal fa-3x"></i><br>
                                 <strong>2,048</strong>
                                 <p>Tempus</p>
                             </li>
-                            <li><i class="fas fa-laptop fa-3x"></i><br>
+                            <li id="four" class="block"><i class="fas fa-laptop fa-3x"></i><br>
                                 <strong>4,096</strong>
                                 <p>Aliquam</p>
                             </li>
-                            <li><i class="far fa-gem fa-3x"></i><br>
+                            <li id="five" class="block"><i class="far fa-gem fa-3x"></i><br>
                                 <strong>1,024</strong>
                                 <p>Nullam</p>
                             </li>
@@ -101,18 +101,26 @@
                         </ul>
                     </section>
             </div>
+    </div>
             <footer>
                 <section>
                     <h2>Aliquam sed mauris</h2>
                     <p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
                     <a href="#"><button>Learn More</button></a>
                 </section>
+                
                 <section>
                     <h2>Etiam feugiat</h2>
-                    <p><strong>Address:</strong>1234 Somewhere Road • Nashville, TN 00000 • USA <br> <strong>Phone:</strong>(000) 000-000x0000 <br> <strong>Email:</strong>information@untitled.tld</p>
-                    
+                    <p><strong>Address: </strong> 1234 Somewhere Road • Nashville, TN 00000 • USA <br> <strong>Phone: </strong> (000) 000-000x0000 <br> <strong>Email: </strong> information@untitled.tld</p>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-github fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-dribbble fa-2x"></i></a></li>       
+                    </ul>
+                    <p id="copyright">	&copy; Untitled. Design: <a href="#">HTML5 UP</a>. Demo Images: <a href="#">Unsplash</a>.</p>
                 </section>
             </footer>
-    </div>
 </body>
-</html>
+</html>             

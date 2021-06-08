@@ -1,0 +1,31 @@
+body {
+    background-image: linear-gradient(to bottom left, #625296 30%,#dc7480);
+    background-attachment: fixed;
+    text-align: center;
+}
+nav {
+    background-color: #f7f7f7;
+    opacity: 85%;           
+    padding: 10px;
+ }
+ ul{
+     list-style: none;
+ }
+.nav_item {
+    display: inline-block;
+    padding: 0 1.25em;
+}
+#main {
+    background-color: white;
+    margin: 0px;
+}
+h1, h2,h3 {
+    margin: 0px;
+}
+.block {
+    display: inline-block;
+    padding: 50px;
+}
+#one {
+    background-color: #dc7480;
+}

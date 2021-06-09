@@ -8,7 +8,7 @@
     <title>Stellar | HTML5 UP</title>
 </head>
 <body>  
-    <div id="wharpper" class="back">
+    <div id="wharpper">
             <header id="header" class="alt">
                 <span class="logo"><img src="https://html5up.net/uploads/demos/stellar/images/logo.svg" alt=""></span>
                     <h1>Stellar</h1>
@@ -16,12 +16,12 @@
                     built by <a href="#">@ajlkn</a> for <a href="#">HTML5 UP</a>.</p>
             </header>
 
-            <nav id="nav">
+            <nav id="nav" class>
                 <ul class="navegator">
-                    <li class="nav_item"><a href="#intro" class="active">Introductions</a></li>
-                    <li class="nav_item"><a href="#first">First Section</a></li>
-                    <li class="nav_item"><a href="#second">Second Section</a></li>
-                    <li class="nav_item"><a href="#cta">Get Started</a></li>
+                    <li class="nav_item"><a href="#intro" class="active"></a><button>Introductions</button></a></li>
+                    <li class="nav_item"><a href="#first"><button>First Section</button></a></li>
+                    <li class="nav_item"><a href="#second"><button>Second Section</button></a></li>
+                    <li class="nav_item"><a href="#cta"><button>Get Started</button></a></li>
                 </ul>
             </nav>
 
@@ -31,16 +31,18 @@
                         <div class="spotlight">
                             <div class="text">
                                 <header class="major">
-                                    <h2>Ipsum sed adipiscing</h2>
+                                    <h2 class="borda">Ipsum sed adipiscing</h2>
                                 </header>
                                 <p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
                                 dipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
                                 Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
                                 <ul class="actions">
-                                    <li><a href="#"><button>Learn More </button></a></li>
+                                    <li><a href="#"><button>Learn More</button></a></li>
                                 </ul>
                             </div>
-                            <span ><img src="../images/pic01.jpg" alt="" class="image"></span>
+                            <div class="container_image">
+                                <img src="../images/pic01.jpg" alt="" class="image">
+                            </div>
                         </div>
                     </section>
 
@@ -68,7 +70,7 @@
                         </ul>
                         <footer>
                             <ul class="actions-special">
-                                <li><a href="#" class="button">Learn More</a></li>
+                                <li><a href="#" class="button"><button >Learn More</button></a></li>
                             </ul>
                         </footer>
                     </section>
@@ -114,25 +116,32 @@
                         </ul>
                     </section>
             </div>
-    </div>
+    
             <footer class="final-space">
-                <section>
-                    <h2>Aliquam sed mauris</h2>
-                    <p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-                    <a href="#"><button>Learn More</button></a>
-                </section>
-                <section>
-                    <h2>Etiam feugiat</h2>
-                    <p><strong>Address: </strong> 1234 Somewhere Road • Nashville, TN 00000 • USA <br> <strong>Phone: </strong> (000) 000-000x0000 <br> <strong>Email: </strong> information@untitled.tld</p>
-                    <ul>
-                        <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-                        <li><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
-                        <li><a href="#"><i class="fab fa-github fa-2x"></i></a></li>
-                        <li><a href="#"><i class="fab fa-dribbble fa-2x"></i></a></li>       
-                    </ul>
+                <div id="footer-section-1">
+                  <section >
+                        <h2>Aliquam sed mauris</h2>
+                        <p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+                        <a href="#"><button>Learn More</button></a>
+                    </section>  
+                </div>
+                <div id="footer-section-2">
+                    <section>
+                        <h2>Etiam feugiat</h2>
+                        <p id="location"><strong>Address: </strong> 1234 Somewhere Road • Nashville, TN 00000 • USA <br> <br><strong>Phone: </strong> (000) 000-000x0000 <br><br> <strong>Email: </strong> information@untitled.tld</p>
+                        <ul>
+                            <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                            <li><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                            <li><a href="#"><i class="fab fa-github fa-2x"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble fa-2x"></i></a></li>       
+                        </ul>
+                    </section>
+                </div>
+                <div class="copyright">
                     <p id="copyright">	&copy; Untitled. Design: <a href="#">HTML5 UP</a>. Demo Images: <a href="#">Unsplash</a>.</p>
-                </section>
+                </div>     
             </footer>
+    </div>
 </body>
 </html>             

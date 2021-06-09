@@ -3,29 +3,46 @@ body {
     background-attachment: fixed;
     text-align: center;
 }
-nav {
-    background-color: #f7f7f7;
-    opacity: 85%;           
-    padding: 10px;
- }
- ul{
-     list-style: none;
- }
-.nav_item {
-    display: inline-block;
-    padding: 0 1.25em;
+ul { 
+    list-style: none;
+    margin: 0px;
+    border: 0px;
 }
-#main {
+#main, .main {
     background-color: white;
+    margin: auto;
+    border-top: 1px;
+}
+.navegator {
+    position: sticky;
+    top: 0;
+}
+nav {
+    
+    background-color: #f7f7f7;
+    border-radius: 0.25em 0.25em 0em 0em  ;
+    opacity: 85%;           
+    padding: 10x;
     margin: 0px;
 }
-h1, h2,h3 {
+.nav_item {
+    display: inline-block;
+    padding: 20px;
+}
+h2, h1, h3, ul, p {
     margin: 0px;
 }
 .block {
     display: inline-block;
     padding: 50px;
 }
-#one {
-    background-color: #dc7480;
+.features {
+    justify-content: center;
+    display: flex;
+    column-count: 3;
+    column-gap: 25px;
 }
+h3 {
+    font-size: 20px;
+}
+

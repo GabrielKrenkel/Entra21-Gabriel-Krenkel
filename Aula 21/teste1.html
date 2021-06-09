@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let armazenador = ["1"] // substituir
+        function Verificar(){    
+        let matricula = +prompt("Digite a matrícula do aluno")   
+            for (let i of armazenador){
+                if (matricula == i[0]){
+                    let notas = []
+                        for (let i = 0; i < 3; i++) {
+                            notas[i] = +prompt("Digite a nota do seu aluno")
+                        }
+                return notas, matricula
+                }   else{
+                        console.log("A matrícula não condiz com nenhuma matrícula que possui no nosso sistema\nSinto muito :(")
+                    }
+            }
+        }
+
+        function armazenarNotas (notas, matricula){
+            for (let nota of armazenador){
+                if (matricula == armazenador) {
+                    nota.push(notas[0], notas[1], notas[2])
+                    return armazenador
+                }
+            }
+        }
+        Verificar()
+        armazenarNotas()
+    </script>
+</body>
+</html>

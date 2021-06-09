@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Exercícios
+        /*
+            1) Crie uma função lerNumero() que vai pedir um número até que
+            o usuário informe um valor númerico.        
+
+            2) Crie uma função que vai gerar um valor aleatório com base
+            nos limites minimo e máximo passados como parâmetro.
+            random(minimo, maximo)
+
+            3)
+            let i = 0;
+            while (i != 10) {
+                i += 0.2;
+            }
+
+            Porque esse código irá criar um looping infinito?
+        */
+
+        /*
+            1)
+            let numero = 0
+            function pedirNumero(numero) {
+                for (let i = 0; i < 1;) {
+                    let verificar = prompt("Digite um numero")
+                    if (isFinite(verificar)) {
+                        numero = verificar
+                        console.log(numero)
+                        i++
+                    }
+                }
+            }
+
+            2)
+            function random(min, max) {
+                math.floor(math.random() * (max - min)) + 1
+            }
+        */
+
+        // Exercícios
+        /*
+        1) Escreva uma função capitalize(string) que retorna uma string com o primeiro caractere de 
+           cada palavra em maiúsculo.
+
+        2) Escreva uma função checaSpam(string) que retorna um booleano indicando se a string contém 
+        as palavras "jequiti" ou "day trading".
+
+        3) Escreva uma função truncar(string, tamanhoMaximo) que checa o tamanho de um string e se ela
+        excede o tamanhoMaximo substitui o final da string com "..."
+        Exemplo:
+        truncar("teste teste teste teste", 10) -> "teste test..."
+        */
+
+        {
+            1)
+            let name = prompt("Digite algo")
+            function capitalize(name){
+                let vetor = name.split(" ")
+                for (let i = 0; i < vetor.langth; + 1) {
+                    let nameCapitalized = vetor[i][0].toUpperCase() + vetor[i]
+                    console.log(nameCapitalized) 
+                }
+                
+            }
+        }
+            
+        /*
+            2)
+            let palavra = prompt("Digite algo").toLowerCase()
+            function checkStr() {
+                if (palavra.includes("jequiti") || palavra.includes("day trading")) {
+                    return true
+                }
+            return false
+            }
+            checkStr()
+        */
+    </script>
+</body>
+</html>

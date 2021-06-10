@@ -2,7 +2,7 @@ body {
     background-image: linear-gradient(to bottom left, #5e4e92 20%,#dc7381);
     background-attachment: fixed;
     widows: inherit;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
     margin-top: 0px;
 }
 ul { 
@@ -21,6 +21,15 @@ ul {
 }
 .first_txt {
     margin-bottom: 40px;
+    font-size: 1.25em;
+    color: rgba(255, 255, 255, 0.65);
+}
+#header h1 {
+    font-size: 3.25em;
+    color: rgba(255, 255, 255, 0.65);
+}
+.link_head {
+    color: rgba(255, 255, 255, 0.65);
 }
 .main {
     background-color: white;
@@ -139,7 +148,4 @@ p {
     display: block;
     margin-top: 20px;
     background-image: linear-gradient(90deg, #efa8b0, #a89cc8, #8cc9f0);
-}
-#location p{
-    line-height: 15px;
 }

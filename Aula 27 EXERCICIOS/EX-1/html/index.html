@@ -18,26 +18,26 @@
 
             <nav id="nav" class>
                 <ul class="navegator">
-                    <li class="nav_item"><a href="#intro" class="active"></a><button>Introductions</button></a></li>
-                    <li class="nav_item"><a href="#first"><button>First Section</button></a></li>
-                    <li class="nav_item"><a href="#second"><button>Second Section</button></a></li>
-                    <li class="nav_item"><a href="#cta"><button>Get Started</button></a></li>
+                    <li class="nav_item"><a href="#intro" class="active">Introductions</a></li>
+                    <li class="nav_item"><a href="#first" class="active">First Section</a></li>
+                    <li class="nav_item"><a href="#second" class="active">Second Section</a></li>
+                    <li class="nav_item"><a href="#cta" class="active">Started</a></li>
                 </ul>
             </nav>
 
             <div id="main">
 
-                    <section id="intro" class="main">
+                    <section id="intro">
                         <div class="spotlight">
                             <div class="text">
                                 <header class="major">
-                                    <h2 class="borda">Ipsum sed adipiscing</h2>
+                                    <h2 class="borda-1">Ipsum sed adipiscing</h2>
                                 </header>
-                                <p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
+                                <p class="texto">Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
                                 dipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
                                 Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
                                 <ul class="actions">
-                                    <li><a href="#"><button>Learn More</button></a></li>
+                                    <li><a href="#" class="button">Learn More</a></li>
                                 </ul>
                             </div>
                             <div class="container_image">
@@ -48,12 +48,12 @@
 
                     
                     <section id="first" class="main">
-                        <header>
-                            <h2>Magna veroeros</h2>
+                        <header class="major">
+                            <h2 class="borda">Magna veroeros</h2>
                         </header>
-                        <ul class="features">
+                        <ul id="features" class="major">
                             <li>
-                                <i class="fa fa-code" id="code"></i>
+                                <i class="fa fa-code fa-9x" id="code"></i>
                                 <h3>Ipsum consequat</h3>
                                 <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
                             </li>
@@ -64,55 +64,60 @@
                             </li>
                             <li>
                                 <i class="far fa-gem fa-9x" id="gem"></i>
-                                <h3>Dolor nullam</h3>
-                                <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
+                                <h3 >Dolor nullam</h3>
+                                <p >Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
                             </li>
                         </ul>
-                        <footer>
-                            <ul class="actions-special">
-                                <li><a href="#" class="button"><button >Learn More</button></a></li>
+                        <footer id="footer-main">
+                            <ul class="major">
+                                <li><a href="#" class="button">Learn More</a></li>
                             </ul>
                         </footer>
                     </section>
                     
                     <section id="second" class="main">
-                        <h2>Ipsum consequat <br>
-                        ---------------------</h2>
-                        <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue
-                            posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-                        <ul id="imgs">
-                            <li id="one" class="block"><i class="fas fa-code-branch fa-3x"></i><br>
-                                <strong>5,120</strong>
+                        <header class="major">
+                            <h2 class="borda">Ipsum consequat</h2>
+                            <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue
+                                posuere. Nulla massa urna, fermentum eget quam aliquet.
+                            </p>
+                        </header>
+                        
+                        <ul id="imgs" class="major">
+                            <li id="one" class="block"><i class="fas fa-code-branch"></i><br>
+                                <p class="number">5,120</p> 
                                 <p>Etiam</p>
                             </li>
-                            <li id="two" class="block"><i class="far fa-folder-open fa-3x"></i><br>
-                                <strong>8,192</strong>
+                            <li id="two" class="block"><i class="far fa-folder-open" class="lock" ></i>
+                                <p class="number">8,192</p> 
                                 <p>Magna</p>
                             </li>
-                            <li id="tree" class="block"><i class="fas fa-signal fa-3x"></i><br>
-                                <strong>2,048</strong>
+                            <li id="tree" class="block"><i class="fas fa-signal"></i><br>
+                                <p class="number">2,048</p> 
                                 <p>Tempus</p>
                             </li>
-                            <li id="four" class="block"><i class="fas fa-laptop fa-3x"></i><br>
-                                <strong>4,096</strong>
+                            <li id="four" class="block"><i class="fas fa-laptop"></i><br>
+                                <p class="number">4,096</p>
                                 <p>Aliquam</p>
                             </li>
-                            <li id="five" class="block"><i class="far fa-gem fa-3x"></i><br>
-                                <strong>1,024</strong>
+                            <li id="five" class="block"><i class="far fa-gem"></i><br>
+                                <p class="number">1,024</p>
                                 <p>Nullam</p>
                             </li>
                         </ul>
                         <p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
-                        <a href="#"><button>Learn More</button></a>
+                        <ul id="bottom-buttom">
+                            <li><a href="#" class="button" >Learn More</a></li>
+                        </ul>
+                        
                     </section>
                     
                     <section id="cta" class="main">
-                        <h2>Congue imperdiet <br>
-                        ---------------------</h2>
+                        <h2 class="borda">Congue imperdiet</h2>
                         <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue <br> posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-                        <ul>
-                            <li><a href="#"><button>Get Started</button></a></li>
-                            <li><a href="#"><button>Learn More</button></a></li>
+                        <ul id="button-end"class="major">
+                            <li><a href="#" class="button-2">Get Started</a></li>
+                            <li><a href="#" class="button">Learn More</a></li>
                         </ul>
                     </section>
             </div>
@@ -122,7 +127,7 @@
                   <section >
                         <h2>Aliquam sed mauris</h2>
                         <p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
-                        <a href="#"><button>Learn More</button></a>
+                        <a href="#" class="button-footer">Learn More</a>
                     </section>  
                 </div>
                 <div id="footer-section-2">
@@ -130,11 +135,11 @@
                         <h2>Etiam feugiat</h2>
                         <p id="location"><strong>Address: </strong> 1234 Somewhere Road • Nashville, TN 00000 • USA <br> <br><strong>Phone: </strong> (000) 000-000x0000 <br><br> <strong>Email: </strong> information@untitled.tld</p>
                         <ul>
-                            <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-github fa-2x"></i></a></li>
-                            <li><a href="#"><i class="fab fa-dribbble fa-2x"></i></a></li>       
+                            <li><a href="#" class="min-icon"><i class="fab fa-twitter fa-2x"></i></a></li>
+                            <li><a href="#" class="min-icon"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                            <li><a href="#" class="min-icon"><i class="fab fa-instagram fa-2x"></i></a></li>
+                            <li><a href="#" class="min-icon"><i class="fab fa-github fa-2x"></i></a></li>
+                            <li><a href="#" class="min-icon"><i class="fab fa-dribbble fa-2x"></i></a></li>       
                         </ul>
                     </section>
                 </div>

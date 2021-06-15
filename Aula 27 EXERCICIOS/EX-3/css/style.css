@@ -1,0 +1,130 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #787878;
+    margin: 0 0 1em 0;
+}
+#header {
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    background-image: url(../images/overlay.png), url(../images/bg.jpg);
+    padding: 72px 24px;
+    height: auto;
+    text-align: center; 
+    background-size: cover;
+}
+#inner img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin-bottom: 22px;
+}
+#inner h1, #inner a {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 21.6px;
+    line-height: 35px;
+}
+#inner strong {
+    color: white;
+}
+#main {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 36px;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
+#one {
+    margin: 0 0 0 0;
+    border-top: 0;
+    padding: 0 0 0 0;
+} 
+#one h2{
+    font-size: 21.6px;
+    line-height: 1.5em;
+    margin-bottom: 21.6px;
+}
+#one p {
+    color: #a2a2a2;
+    line-height: 1.5em;
+    margin-bottom: 32px;
+}
+.actions {
+    list-style: none;
+    padding-left: 0px;
+
+}
+.button {
+    border-radius: 0.35em;
+    display: inline-block;
+    text-decoration: none;
+    width: 258px;
+    height: 44px;
+    color: #787878;
+    padding: 0 1.5em;
+    border: 3px solid #efefef;
+    text-align: center;
+    line-height: 2.75em;
+}
+section {
+        margin: 2.25em 0 0 0;
+        border-top: 2px solid #efefef;
+        padding: 2.25em 0 0 0;
+}
+#two h2 {
+    margin-bottom: 19.2px;
+}
+img {
+    width: 100%;
+    margin: 0 0 1.5em 0;
+    border-radius: 0.35em;
+}
+#images p {
+    font-size: 12.8px;
+    margin: 0 0 2em 0;
+    color: #a2a2a2;
+}
+#three h2 {
+    color: #787878;
+    margin: 0 0 1em 0;    
+}
+#three p {
+    color: #a2a2a2;
+    line-height: 1.75em;
+}
+form div {
+    margin-top: 1em;
+}
+form textarea {
+    margin-bottom: 0.75em;
+}
+input, textarea {
+    color: #a2a2a2;
+    display: block;
+    background-color: #f7f7f7;
+    border: 2px solid transparent;
+    border-radius: 0.35em;
+    width: 288px;
+    margin: 0;
+}
+input {
+    height: 2.75em;
+    padding: 0 0.75em;
+}
+#message {
+    font: 400 14px "Source Sans Pro", Helvetica, sans-serif ;
+    line-height: 1;
+    height: 112px;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.label {
+    display: none;
+}
+li {
+    list-style: none;
+}

@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 #header {
     font-family: "Source Sans Pro", Helvetica, sans-serif;
     background-image: url(../images/overlay.png), url(../images/bg.jpg);
+    background-position: top left, center center;
     padding: 72px 24px;
     height: auto;
     text-align: center; 
@@ -125,6 +126,64 @@ input {
 .label {
     display: none;
 }
-li {
+#inf ul li {
     list-style: none;
+    line-height: 1.75em;
+    padding-left: 1.25em;
+    position: relative;
+    color: #a2a2a2;
+}
+.li {
+    margin-top: 24px;
+}
+.li a {
+    color: #a2a2a2;
+    font-style: none;
+}
+#inf ul {
+    margin-bottom: 32px;
+}
+#footer {
+    background-attachment: scroll;
+    background-image: url(../images/overlay.png), url(../images/bg.jpg);
+    background-position: top left, bottom center;
+    width: auto;
+    height: 217.8px;
+    background-size: auto, cover;
+}
+.icons {
+    font-style: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 36px 29px;
+}
+.icons li {
+    padding-right: 16px;
+    font-size: 34px;
+    color: #1f1815;
+    
+}
+.icons li a {
+    color: rgba(211, 211, 211, 0.446);
+}
+.copyright {
+    display: block;
+    text-align: center;
+    line-height: 1.8em;
+    color: rgba(211, 211, 211, 0.446);
+    font-size: 12.8px;
+}
+.copyright a{
+    color: rgba(211, 211, 211, 0.446);
+}
+
+@media screen and (min-width: 480px) {
+    #header {
+        padding: 36px 24px;
+    }
+    #inner h1 {
+        margin-bottom: 0;
+    }
 }

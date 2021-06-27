@@ -24,6 +24,7 @@ adicionar.addEventListener("click", (event)  => {
     if (quantidade < 1) {
 
        verificar(item, quantidade)
+
     }
 
     if (quantidade > 0) {
@@ -54,30 +55,47 @@ excluir.addEventListener("click", (event) => {
 function verificar(item, quantidade) {
     let flag2 = true 
     while (flag2 === true) {
-        for (let i = 0; i < lista.length; i++) {
-            let linhaVerificar = lista[i].children
-            for (let j = 2; flag2 == true ;) {
-                if (item === linhaVerificar[j].outerText) {
-                    remover = Number(linhaVerificar[1].innerText)
-                    if (remover + quantidade < 0) {
+
+        for (let i = 1; i <= lista.length; i++) {
+
+            let linhaVerificar = lista[i - 1].children
+
+                if (item === linhaVerificar[2].innerText) {
+
+                    remover = Number(linhaVerificar[1].innerHTML)
+
+                    if (remover + quantidade <= 0) {
+
                         if (i === 0) {
+
                             deleteRow(i + 1)
+                            flag2 = false
+                            return
+
+                        } else {
+
+                            deleteRow(i)
+                            flag2 = false
+                            return
+
                         }
-                        deleteRow(i)
-                        flag2 = false
-                        return
                     }
+
                     novoValor = remover + quantidade
                     linhaVerificar[1].innerText = novoValor
                     flag2 = false
                     return
+                
                 }
-            }
+
         }
+
         flag2 = false
     }
+
     return true
 }
+
 function deleteRow(i){
 
     if (i <= 0 || isNaN(i)) {
@@ -136,6 +154,6 @@ function deleteRowItem(posicao){
     if (i === undefined) {
         return
     }
-    
+
     document.querySelector(".table").deleteRow(i)
 }

@@ -47,7 +47,7 @@ excluir.addEventListener("click", (event) => {
 
     posicao = Number(qtdExcluir.value)
 
-    deleteRow(posicao)
+    deleteRowItem(posicao)
     
 })
 
@@ -78,19 +78,10 @@ function verificar(item, quantidade) {
     }
     return true
 }
-function deleteRow(posicao){
+function deleteRow(i){
 
-    if (posicao <= 0 || isNaN(posicao)) {
+    if (i <= 0 || isNaN(i)) {
         return
-    }
-    let i
-    for (let remover = 0; remover < lista.length; remover++) {
-       let veriicar = Number(lista[remover].firstElementChild.innerText)
-        if (veriicar == posicao) {
-            i = remover + 1
-            break
-        }
-        
     }
 
     document.querySelector(".table").deleteRow(i)
@@ -126,4 +117,25 @@ function verificarQuantidade(item, quantidade) {
         }
         flag1 = false
     }
+}
+function deleteRowItem(posicao){
+
+    if (posicao <= 0 || isNaN(posicao)) {
+        return
+    }
+    let i
+    for (let remover = 0; remover < lista.length; remover++) {
+       let veriicar = Number(lista[remover].firstElementChild.innerText)
+        if (veriicar === posicao) {
+            i = remover + 1
+            break
+        }
+        
+    }
+
+    if (i === undefined) {
+        return
+    }
+    
+    document.querySelector(".table").deleteRow(i)
 }

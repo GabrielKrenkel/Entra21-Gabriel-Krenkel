@@ -6,6 +6,7 @@ body{
     background-image: url(../imagem/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 }
 .titulo {
     font-size: 55px;
@@ -13,7 +14,6 @@ body{
     text-align: center;
     font-family: fantasy;
     z-index: 10000;
-    background-image: ;
 }
 #main{
     text-align: center;
@@ -21,22 +21,28 @@ body{
 }
 .text{
     position: relative;
-    right: 8%;
+    right: 30%;
 }
 .align{
     text-align: center;
     position: absolute;
     box-sizing: border-box;
-    bottom: 0;
+    bottom: 5px;
     width: 100%;
     background-color: rgba(180, 180, 180, 0.623);
 }
 input{
     margin-left: 8px;
 }
-.quantidade{
-    width: 40px;
-}
 ul {
     list-style: none;
+}
+.head{
+    margin-right: 400px;
+}
+span {
+    display: inline-block;
+}
+.qtd-excluir {
+    width: 40px;
 }

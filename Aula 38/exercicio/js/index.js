@@ -118,6 +118,10 @@ function adicionarLinha(idTabela, contador, quantidade, item) {
 }
 function verificarQuantidade(item, quantidade) {
     let flag1 = true 
+    if (item === "" || isNumber(item) === true ||  item >= 0 || item < 0) {
+        flag = false
+        return alert("Item invalido.")
+    }
     while (flag1 === true) {
         for (let i = 0; i < lista.length; i++) {
             let linhaVerificar = lista[i].children
@@ -156,4 +160,17 @@ function deleteRowItem(posicao){
     }
 
     document.querySelector(".table").deleteRow(i)
+}
+
+function isNumber(n) {
+
+    let verfContido = n.split("");
+
+    for (let i = 0; i <= n.length; i++) {
+        if (isNaN(verfContido[i]) === false) {
+            return true
+        }
+    }
+
+    return false
 }

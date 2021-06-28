@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        #transformItem {
+            padding: 10px 40px;
+            margin: 1px solid black;
+        }
+        #texto{
+            display: none;
+            margin: 20px;
+        }
+        div {
+            margin: 1px solid black;
+        }
+    </style>
+
+    <div id="transformItem"></div>
+    <!-- <div id="transformItem"><input type="text" id="texto" ><P>DIGITE ALGO</P></div> -->
+
+    <script>
+        /*1) Crie uma <div> que se torne em uma <textarea> quando clicada.
+        A <textarea> permite editar o HTML da <div>
+        Quando o usuário pressionar Enter ou sair da <textarea>, ela
+        volta a ser uma <div> com o conteúdo alterado na <textarea>*/
+
+        // let div = document.querySelector("#transformItem"),
+        //     text = document.querySelector("#texto"),
+        //     paragrafo = document.querySelector("p"),
+        //     adicionar
+        // div.tabIndex = 0
+        // div.focus()
+        
+        // div.addEventListener("click", (event) => {
+
+        //     paragrafo.style.display = "none"
+        //     text.style.display = "block"
+            
+        // })
+        // text.addEventListener("blur", () => {
+
+        //     adicionar = text.value
+        //     text.value = ""
+        //     paragrafo.innerText = adicionar.toUpperCase()
+        //     text.style.display = "none"
+        //     paragrafo.style.display = "block"
+
+        // })
+
+        let salvaDiv = document.body.querySelector("#transformItem").outerHTML,
+            div = document.querySelector("#transformItem"),
+            textarea = "<textarea name=\"adicionar\" id=\"textArea\" cols=\"30\" rows=\"10\"></textarea>",
+            areatexto,
+            texto
+
+        div.tabIndex = 0
+        div.focus()
+
+        div.addEventListener ("click", (event) => {
+
+            mostraTextArea()
+
+        })
+
+        areatexto.addEventListener("blur", () => {
+
+            document.body.outerHTML = ""
+
+            document.body.outerHTML = 
+
+        })
+
+        function mostraTextArea() {
+
+            document.body.outerHTML = ""
+
+            document.body.outerHTML = "<textarea name=\"adicionar\" id=\"textArea\" cols=\"30\" rows=\"10\"></textarea>"
+
+            areatexto = document.querySelector("#textarea")
+
+        }
+
+        function salvaTextArea() {
+            
+            texto = document.querySelector("textarea")
+        }
+    </script>
+</body>
+</html>

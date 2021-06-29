@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        form{
+            position: relative;
+            
+            display: flex;
+        }
+
+        h1{
+            margin-top: 250px;
+            text-align: center;
+        }
+        button {
+            
+        }
+        .botao {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        label{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+
+    <h1>Deposite aqui</h1>
+
+    <form action="calcJuros">
+        <label for="quantia">
+                Digite a quantia que deseja depositar:
+                <input type="number" id="quantia">
+            </label>
+            <br><br>
+            <label for="meses">
+                Digite quantos anoss vai permanecer o dinheiro
+                <input type="number" id="anos">
+            </label>
+            <br><br>
+            <label for="juros">
+                Digite a quantidade de juros ao ano:
+                <input type="number" id="juros">
+            </label>
+    </form>
+    <br>
+    <div class="botao">
+        <button id="calcular">Calcular</button>
+    </div>
+    
+
+    <script>
+
+        let inicial = document.querySelector("#quantia").value,
+            anos = document.querySelector("#anos").value,
+            juros = document.querySelector("#juros").value,
+            calcula = document.querySelector("#calcular")
+
+        calcula.addEventListener("click", (event) => {
+
+        })
+        /*
+                Exercício
+
+                Crie um página da web que permita receber um valor inicial
+                de depósito, a quantidade de meses que esse dinheiro ficará
+                depositado e a porcentagem de juros ao ano.
+                Mostre quanto o dinheiro rendeu nesse período.
+
+                Fórmula:
+                resultado = Math.round(inicial * (1 + juros * anos))
+                
+                Onde:
+                
+                    inicial - valor inicial.
+                    juros - porcentagem de juros. Ex.: 10%.
+                    anos - tempo que o valor ficará depositado.
+                
+            */
+    </script>
+    
+</body>
+</html>

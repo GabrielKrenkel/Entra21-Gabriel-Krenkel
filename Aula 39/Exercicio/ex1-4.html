@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .botao {
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .chamaModal{
+            margin-top: 25%;
+        }
+        .modal{
+            text-align: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color:rgba(0,0,0,0.4);
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            display: none;
+
+        }
+
+        .form{
+            position: relative;
+            top: 40%;
+            background-color: white;
+            height: 15%;
+            width: 10%;
+            left: 870px;
+        }
+        .buttonForm{
+            margin-left: 10px;
+        }
+    </style>
+    
+    <div class="botao">
+        <button class="chamaModal">ME APERTE</button>
+    </div>
+    
+
+    <div class="modal">
+        <div class="form">
+            <br><br>
+            <input type="text" class="mensagem">
+            <br><br><br>
+            <button class="buttonForm" id="enviar">OK</button><button class="buttonForm" id="cancelar">Cancelar</button>
+        </div>
+    </div>
+    
+    <script>
+
+            let botao = document.querySelector(".chamaModal"),
+                modal = document.querySelector(".modal"),
+                input = document.querySelector(".mensagem"),
+                btnOK = document.querySelector("#enviar"),
+                btnCancelar = document.querySelector("#cancelar")
+
+            function mostraModal() {
+                modal.style.display = "block"
+            }
+
+            botao.addEventListener("click", (event) => {
+                
+                mostraModal()
+            })
+        /*
+        Exercício
+
+        Crie uma função mostrarModal(html, callback) que mostra um form que contenha a mensagem
+        passada no parâmetro <html>, um <input type="text"> e botões de OK/Cancelar.
+
+        * O usuário deve digitar alguma coisa no input de texto e pressionar Enter ou OK, então
+        a função callback será chamada passado o valor digitado callback(valor)
+
+        * Se o usuário pressionar Esc ou Cancelar, então a callback será chamada passando null.
+
+        Em ambos os casos o form irá sumir da tela.
+
+        Requisitos:
+
+        1. O form deve estar no centro da tela.
+        2. O form deve ser um modal. Em outras palavras, a interação com o resto da página só é possível
+        quando o usuário fecha o form.
+        3. Quando o form é criado o focus deve estar no input        
+        */
+    </script>
+</body>
+</html>

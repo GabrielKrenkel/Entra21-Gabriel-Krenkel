@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let timestamp, data, paragrafo = document.querySelector("p")
+
+        function mostrarData() {
+            timestamp = Date.now()
+
+            data = new Date(timestamp)
+
+            hora = String(data.getHours())
+
+            if (hora < 10) {
+                hora = "0" + data.getHours()
+            }
+
+            minutos = String(data.getMinutes())
+
+            if (minutos < 10) {
+                minutos = "0" + data.getMinutes()
+            }
+
+            segundos = String(data.getSeconds())
+
+            if (segundos < 10) {
+                segundos = "0" + data.getSeconds()
+            }
+
+            relogio = hora + ":" + minutos + ":" + segundos
+
+            paragrafo.innerText = relogio
+        }
+        
+        setInterval(mostrarData, 1000)
+    </script>
+</body>
+</html>

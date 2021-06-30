@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5a1186bf2d.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+
+        .modal{
+            background-color: rgba(0, 0, 0, 0.200);
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            overflow: auto;
+            display: none;
+        }
+
+        #menssagem-modal {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background-color: white;
+            top: -105px;
+            
+        }
+        #fechar-Modal{
+            display: flex;
+            position: relative;
+            background-color: white;
+            flex-direction: column;
+            align-items: center;
+            top: 30%;
+            width: 25em;
+            height: 23em;
+            justify-content: space-evenly;
+            left: 40%;
+            border-radius: 0.20em;
+        }
+        #fechar-Modal span{
+            
+            text-align: center;
+            position: relative;
+            display: flex;
+            left: 45%;
+            top: -140px;
+            
+        }
+        #fechar-Modal span p {
+            margin: 15px;
+        }
+
+        .relogio{
+            text-align: center;
+            margin: 100px;
+            left: 85%;
+            height: 24rem;
+            
+        }
+        #contador{
+            
+            font-size: 90px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #cronometro{
+            font-stretch: ultra-expanded;
+            font-size: 23px;
+            display: flex;
+            font-family: Arial, Helvetica, sans-serif;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button{
+            padding: 18px 65px;
+            font-size: 20px;
+        }
+        h2 {
+            position: relative;
+            top: -120px;
+            left: 15rem;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 40px;
+        }
+
+    </style>
+    
+    <div class="relogio">
+        <br><br><br><br><br><br>
+        <h1 id="contador">00:00:00<h2 id="ms">: 00</h2></h1>
+    </div>
+
+    <div id="cronometro">
+        <label for="tempo">Digite o tempo necessario
+            <input type="time" id="tempo">
+        </label>
+        <br><br>
+        <button id="botao">Iniciar</button>
+    </div>
+
+    <div class="modal">
+        <div id="fechar-Modal">
+            <br>
+           <span><p>&#9747;</p></span>
+            <div id="menssagem-modal">
+
+                <h3>Tempo finalizado</h3>
+                <br><br> <br>
+            </div>
+
+        </div>
+            
+    </div>
+    <script>
+        // 3) Faça uma cronômetro através da função criaCronometro(tempo, callback) que receba o valor inicial através de um <input type="time"> 
+        // e dispare uma função callback quando o tempo acabar.
+
+        let hora, minuto, segundo, milisegundos, tempo = document.querySelector("#tempo"), Iniciar = document.querySelector("#botao"), mostrar = document.querySelector("#contador")
+
+        function obtemTempo(calcular) {
+
+            calcular.split("")
+
+            hora = Number(calcular[0] + calcular[1])
+
+            minuto = Number(calcular[3] + calcular[4])
+
+            if (isNaN(hora)) {
+                hora = "00"
+            }
+            if (isNaN(minuto)) {
+                minuto = "00"
+            }
+
+            if (hora >= 0) {
+                hora = String(calcular[0] + calcular[1])
+            }
+            if (minuto >= 0) {
+                minuto = String(calcular[3] + calcular[4])
+            }
+
+            mostrar.textContent = hora + ":" + minuto + ":" + "00"
+        }
+
+        Iniciar.addEventListener("click", (event) => {
+            
+            apagar = document.querySelector("#cronometro")
+
+            apagar.style.display = "none"
+
+            calcular = tempo.value
+        
+            obtemTempo(calcular)
+        })
+
+
+    </script>
+</body>
+</html>

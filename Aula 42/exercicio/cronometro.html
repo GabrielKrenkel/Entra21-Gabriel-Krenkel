@@ -89,7 +89,16 @@
             font-family: Arial, Helvetica, sans-serif;
             font-size: 40px;
         }
+        .startstop{
+            position: relative;
+            display: none;
+            flex-direction: row;
+            justify-content: center;
 
+        }
+        .startstop button {
+            margin-left: 30px;
+        }
     </style>
     
     <div class="relogio">
@@ -103,6 +112,12 @@
         </label>
         <br><br>
         <button id="botao">Iniciar</button>
+    </div>
+
+    <div class="startstop">
+        <div class="botoes">
+            <button id="start">Start</button><button id="stop">Stop</button>
+        </div>
     </div>
 
     <div class="modal">
@@ -122,45 +137,124 @@
         // 3) Faça uma cronômetro através da função criaCronometro(tempo, callback) que receba o valor inicial através de um <input type="time"> 
         // e dispare uma função callback quando o tempo acabar.
 
-        let hora, minuto, segundo, milisegundos, tempo = document.querySelector("#tempo"), Iniciar = document.querySelector("#botao"), mostrar = document.querySelector("#contador")
+        let hora, minuto, segundo = 0, milisegundos = 0, tempo = document.querySelector("#tempo"), Iniciar = document.querySelector("#botao"), 
+        mostrar = document.querySelector("#contador"), startstop = document.querySelector(".startstop"), start = document.querySelector("#start"), 
+        stop = document.querySelector("#stop"), mostrarMilisegundo = document.querySelector("#ms"), apagar = document.querySelector("#cronometro"), parar
 
-        function obtemTempo(calcular) {
-
-            calcular.split("")
-
-            hora = Number(calcular[0] + calcular[1])
-
-            minuto = Number(calcular[3] + calcular[4])
-
-            if (isNaN(hora)) {
-                hora = "00"
-            }
-            if (isNaN(minuto)) {
-                minuto = "00"
-            }
-
-            if (hora >= 0) {
-                hora = String(calcular[0] + calcular[1])
-            }
-            if (minuto >= 0) {
-                minuto = String(calcular[3] + calcular[4])
-            }
-
-            mostrar.textContent = hora + ":" + minuto + ":" + "00"
-        }
-
-        Iniciar.addEventListener("click", (event) => {
+        function obtemTempo() {
             
-            apagar = document.querySelector("#cronometro")
+            verificar = tempo.value.split(":")
+
+            console.log(verificar)
+            
+
+            if (verificar.length > 1) {
+
+                hora = Number(verificar[0])
+
+                minuto = Number(verificar[1])
+
+                if (hora < 10) {
+
+                    hora = "0" + hora
+                
+                }
+
+                if (minuto < 10) {
+
+                    minuto = "0" + minuto
+                
+                }
+
+            } else {
+
+                    return alert("Valor Invalido!")
+            }
 
             apagar.style.display = "none"
 
-            calcular = tempo.value
-        
-            obtemTempo(calcular)
+            startstop.style.display = "flex"
+            
+            mostrar.innerText = "" + hora + ":" + minuto + ":" + "00"
+        }
+
+        Iniciar.addEventListener("click", (event) => {
+                    
+            obtemTempo()
+
         })
 
+        start.addEventListener("click", (event) => {
+            
+            parar = setInterval(cronometrar, 10)
 
+            start.disabled = true
+        })
+
+        function cronometrar() {
+
+            if (milisegundos == 0) {
+
+                if (segundo == 0 && milisegundos == 0) {
+
+                    segundo = 60
+
+                    minuto --
+
+                    if (minuto == 0 && segundo == 0 && milisegundos == 0) {
+                        
+                        hora --
+
+                        if (hora == 0 && minuto == 0 && segundo == 0 && milisegundos == 0) {
+                            
+                        }
+                    }
+                
+                }
+                
+                milisegundos = 100
+                
+                segundo --
+            
+            }
+            
+            milisegundos --
+            
+            if (segundo >= 10 && hora >= 10 && minuto >= 10) {
+
+                mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                mostrar.innerText = hora + ":" + minuto + ":" + segundo
+
+                return
+
+            }
+
+            if (segundo >= 10 && hora >= 10) {
+
+                mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                mostrar.innerText = hora + ":" + "0" + minuto + ":" + segundo
+
+                return
+            }
+            
+            if (segundo >= 10 && minuto >= 10) {
+
+                mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                mostrar.innerText = "0" + hora + ":" + minuto + ":" + segundo
+
+                return
+
+            }
+
+            if (minuto >= 10 && hora >= 10) {
+
+                mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                mostrar.innerText = hora + ":" + minuto + ":" + "0" + segundo
+
+                return
+
+            }
+        }
     </script>
 </body>
 </html>

@@ -59,17 +59,22 @@
 
         .relogio{
             text-align: center;
+            
             margin: 100px;
+            margin-top: 0px;
             left: 85%;
             height: 24rem;
             
         }
         #contador{
             
+            margin-top: 0;
             font-size: 90px;
             font-family: Arial, Helvetica, sans-serif;
         }
         #cronometro{
+            position: relative;
+            top: -100px;
             font-stretch: ultra-expanded;
             font-size: 23px;
             display: flex;
@@ -81,6 +86,7 @@
         button{
             padding: 18px 65px;
             font-size: 20px;
+            margin-left: 30px;
         }
         h2 {
             position: relative;
@@ -99,6 +105,16 @@
         .startstop button {
             margin-left: 30px;
         }
+
+        #fechar-Modal span:hover {
+
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        .botoes{
+            display: flex;
+            flex-direction: row;
+
+        }
     </style>
     
     <div class="relogio">
@@ -107,11 +123,13 @@
     </div>
 
     <div id="cronometro">
-        <label for="tempo">Digite o tempo necessario
+        <label for="tempo">Digite o tempo necessário
             <input type="time" id="tempo">
         </label>
         <br><br>
-        <button id="botao">Iniciar</button>
+        <div class="botoes"> 
+            <button id="botao">Iniciar</button> <button id="excluir">Excluir</button>
+        </div>
     </div>
 
     <div class="startstop">
@@ -123,7 +141,7 @@
     <div class="modal">
         <div id="fechar-Modal">
             <br>
-           <span><p>&#9747;</p></span>
+           <span id="close"><p>&#9747;</p></span>
             <div id="menssagem-modal">
 
                 <h3>Tempo finalizado</h3>
@@ -137,53 +155,18 @@
         // 3) Faça uma cronômetro através da função criaCronometro(tempo, callback) que receba o valor inicial através de um <input type="time"> 
         // e dispare uma função callback quando o tempo acabar.
 
-        let hora, minuto, segundo = 0, milisegundos = 0, tempo = document.querySelector("#tempo"), Iniciar = document.querySelector("#botao"), 
+        let hora, minuto, segundo = "00", milisegundos = "00", tempo = document.querySelector("#tempo"), Iniciar = document.querySelector("#botao"), 
         mostrar = document.querySelector("#contador"), startstop = document.querySelector(".startstop"), start = document.querySelector("#start"), 
-        stop = document.querySelector("#stop"), mostrarMilisegundo = document.querySelector("#ms"), apagar = document.querySelector("#cronometro"), parar
+        stop = document.querySelector("#stop"), mostrarMilisegundo = document.querySelector("#ms"), apagar = document.querySelector("#cronometro"), 
+        parar, modal = document.querySelector(".modal"), close = document.querySelector("#close"), excluir = document.querySelector("#excluir")
 
-        function obtemTempo() {
-            
-            verificar = tempo.value.split(":")
-
-            console.log(verificar)
-            
-
-            if (verificar.length > 1) {
-
-                hora = Number(verificar[0])
-
-                minuto = Number(verificar[1])
-
-                if (hora < 10) {
-
-                    hora = "0" + hora
-                
-                }
-
-                if (minuto < 10) {
-
-                    minuto = "0" + minuto
-                
-                }
-
-            } else {
-
-                    return alert("Valor Invalido!")
-            }
-
-            apagar.style.display = "none"
-
-            startstop.style.display = "flex"
-            
-            mostrar.innerText = "" + hora + ":" + minuto + ":" + "00"
-        }
 
         Iniciar.addEventListener("click", (event) => {
                     
             obtemTempo()
 
         })
-
+        
         start.addEventListener("click", (event) => {
             
             parar = setInterval(cronometrar, 10)
@@ -191,70 +174,415 @@
             start.disabled = true
         })
 
+        stop.addEventListener("click", (event) => {
+
+            clearInterval(parar)
+
+            apagar.style.display = "flex"
+
+            startstop.style.display = "none"
+
+            start.disabled = false
+
+            preencheCampo()
+
+        })
+
+        excluir.addEventListener("click", (event) => {
+
+            zerar()
+
+        })
+
+        close.addEventListener("click", (event) => {
+
+            modal.style.display = "none"
+
+            apagar.style.display = "flex"
+
+            startstop.style.display = "none"
+
+            start.disabled = false
+        })
+
+        function preencheCampo() {
+            if (hora < 10 && minuto < 10) {
+                
+                tempo.value = "0" + hora + ":" + "0" + minuto
+
+                segundo = segundo
+            
+                return
+            }
+
+            if (hora < 10) {
+                
+                tempo.value = "0" + hora + ":" + minuto
+
+                return
+            }
+
+            if (minuto < 10) {
+                
+                tempo.value = "" + hora + ":" + "0" + minuto
+            
+                return
+            }
+
+        }
+
+        function obtemTempo() {
+            
+            verificar = tempo.value.split(":")         
+
+            if (verificar.length > 1) {
+
+                hora = Number(verificar[0])
+
+                minuto = Number(verificar[1])
+
+                if (hora == 0 && minuto == 0) {
+
+                    return alert("Valores Invalidos!")
+                }
+
+            } else {
+
+                    return alert("Valores Invalidos!")
+            }
+
+            if (hora < 10 && minuto < 10) {
+                
+                apagar.style.display = "none"
+
+                startstop.style.display = "flex"
+                
+                mostrarMilisegundo.innerText = ": \t"  + milisegundos
+                if (segundo == "0") {
+
+                    mostrar.innerText = "0" + hora + ":" + "0" + minuto + ":" + "0" + segundo
+
+                }else{
+
+                    mostrar.innerText = "0" + hora + ":" + "0" + minuto + ":" + segundo
+                
+                }
+
+                return
+            }
+
+            if (hora < 10 && minuto >= 10) {
+
+                apagar.style.display = "none"
+
+                startstop.style.display = "flex"
+                
+                mostrarMilisegundo.innerText = ": \t" + milisegundos
+                if (segundo == "0") {
+
+                    mostrar.innerText = "0" + hora + ":" + minuto + ":" + "0" + segundo
+
+                }  else{
+
+                    mostrar.innerText = "0" + hora + ":" + minuto + ":" + segundo
+                }
+
+                return
+            }
+
+            if (minuto < 10 && hora >= 10) {
+
+                apagar.style.display = "none"
+
+                startstop.style.display = "flex"
+                
+                mostrarMilisegundo.innerText = ": \t" + milisegundos
+                if (segundo == "0") {
+
+                    mostrar.innerText = "" + hora + ":" + "0" + minuto + ":" + "0" + segundo
+                }else{
+
+                    mostrar.innerText = "" + hora + ":" + "0" + minuto + ":" + segundo
+                }
+                
+
+                return
+            }
+
+            apagar.style.display = "none"
+
+            startstop.style.display = "flex"
+            
+            mostrarMilisegundo.innerText = ": \t" + milisegundos
+            if (segundo == "0") {
+
+                mostrar.innerText = "" + hora + ":" + minuto + ":" + "0" + segundo
+            
+            }else{
+
+                mostrar.innerText = "" + hora + ":" + minuto + ":" + segundo
+            
+            }
+            
+        }
+
+        function zerar() {
+            
+            hora = 0
+            segundo = 0
+            minuto = 0
+            milisegundos = "00"
+            
+            mostrarMilisegundo.innerText = ": \t" + milisegundos
+            mostrar.innerText = "0" + hora + ":" + "0" + minuto + ":" + "0" + segundo
+        }
         function cronometrar() {
 
-            if (milisegundos == 0) {
+            Number(minuto), Number(hora), Number(segundo), Number(milisegundos)
 
+            if (milisegundos == 0) {
+               
                 if (segundo == 0 && milisegundos == 0) {
 
-                    segundo = 60
-
-                    minuto --
 
                     if (minuto == 0 && segundo == 0 && milisegundos == 0) {
                         
-                        hora --
 
                         if (hora == 0 && minuto == 0 && segundo == 0 && milisegundos == 0) {
                             
-                        }
-                    }
+                            clearInterval(parar)
+
+                            hora = 0
+                            segundo = 0
+                            minuto = 0
+                            milisegundos = 0
+                            
+                            mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos
+                            mostrar.innerText = "0" + hora + ":" + "0" + minuto + ":" + "0" + segundo
+
+                            return chamaModal()
+                        }  
+
+                        minuto = 60
+                        
+                        hora --
+                    }                    
+
+                    segundo = 60
+
+                    minuto --                    
                 
                 }
-                
+
                 milisegundos = 100
                 
                 segundo --
             
             }
             
-            milisegundos --
-            
-            if (segundo >= 10 && hora >= 10 && minuto >= 10) {
 
-                mostrarMilisegundo.innerText = ": \t" + milisegundos 
-                mostrar.innerText = hora + ":" + minuto + ":" + segundo
+            if (segundo < 10 && hora < 10 && minuto < 10) {
+
+                if (milisegundos < 10) {
+                    
+                    mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
+
+                    mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                
+                } 
+                mostrar.innerText = "0" + hora + ":"+ "0" + minuto + ":" + "0" + segundo
+
+                milisegundos --
 
                 return
 
             }
 
-            if (segundo >= 10 && hora >= 10) {
+            if (segundo < 10 && hora < 10) {
 
-                mostrarMilisegundo.innerText = ": \t" + milisegundos 
-                mostrar.innerText = hora + ":" + "0" + minuto + ":" + segundo
+                if (milisegundos < 10) {
+                    
+                    mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
+
+                    mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                
+                }
+                
+                mostrar.innerText = "0" + hora + ":" + minuto + ":" + "0" + segundo
+
+                milisegundos --
 
                 return
             }
             
-            if (segundo >= 10 && minuto >= 10) {
+            if (segundo < 10 && minuto < 10) {
+
+                if (milisegundos < 10) {
+                    
+                    mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
+
+                    mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                
+                }
+
+                mostrar.innerText = hora + ":" + "0" + minuto + ":" + "0" + segundo
+
+                milisegundos --
+
+                return
+
+            }
+
+            if (minuto < 10 && hora < 10) {
+
+                if (milisegundos < 10) {
+                    
+                    mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
+
+                    mostrarMilisegundo.innerText = ": \t" + milisegundos 
+                
+                }
+                
+                mostrar.innerText = "0" + hora + ":" + "0" + minuto + ":" + segundo
+
+                milisegundos --
+
+                return
+
+            }
+
+            if (minuto < 10 && hora > 10) {
+
+                if (milisegundos < 10) {
+                
+                mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
 
                 mostrarMilisegundo.innerText = ": \t" + milisegundos 
+
+                }
+
+                mostrar.innerText = "" + hora + ":" + "0" + minuto + ":" + segundo
+
+                milisegundos --
+
+            return
+
+            }
+
+            if (minuto > 10 && hora < 10) {
+
+                if (milisegundos < 10) {
+                
+                mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
+
+                mostrarMilisegundo.innerText = ": \t" + milisegundos 
+
+                }
+
                 mostrar.innerText = "0" + hora + ":" + minuto + ":" + segundo
 
-                return
+                milisegundos --
+
+            return
 
             }
 
             if (minuto >= 10 && hora >= 10) {
 
-                mostrarMilisegundo.innerText = ": \t" + milisegundos 
-                mostrar.innerText = hora + ":" + minuto + ":" + "0" + segundo
+                if (milisegundos < 10) {
+
+                    mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
+
+                    mostrarMilisegundo.innerText = ": \t" + milisegundos 
+
+                }
+
+                mostrar.innerText = "" + hora + ":" + minuto + ":" + segundo
+
+                milisegundos --
 
                 return
 
             }
+
+            if (minuto <= 10 && hora >= 10) {
+
+            if (milisegundos < 10) {
+
+                mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+            } else {
+
+                mostrarMilisegundo.innerText = ": \t" + milisegundos 
+
+            }
+
+            mostrar.innerText = "" + hora + ":" + "0" + minuto + ":" + segundo
+
+            milisegundos --
+
+            return
+
+            }
+
+            if (minuto > 10 && hora < 10) {
+
+                if (milisegundos < 10) {
+
+                    mostrarMilisegundo.innerText = ": \t" + "0" + milisegundos 
+
+                } else {
+
+                    mostrarMilisegundo.innerText = ": \t" + milisegundos 
+
+                }
+
+                mostrar.innerText = "0" + hora + ":" + minuto + ":" + segundo
+
+                milisegundos --
+
+                return
+
+            }
+
         }
+
+        function chamaModal() {
+
+            modal.style.display = "flex"
+
+        }
+
+        function salvaInf() {
+
+            localStorage.setItem("hora", hora)
+
+            localStorage.setItem("minuto", minuto)
+
+            localStorage.setItem("segundo", segundo)
+
+            localStorage.setItem("ms", milisegundos)
+
+            
+
+        }
+
+        setInterval(salvaInf, 10)
+            
     </script>
 </body>
 </html>

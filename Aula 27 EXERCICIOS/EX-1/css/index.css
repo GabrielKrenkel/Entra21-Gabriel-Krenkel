@@ -120,9 +120,6 @@ nav {
     display: inline-block;
     padding: 0px 20px ;
 }
-    .nav_item:hover {
-        
-    }
 #imgs{
     display: flex;
     flex-direction: row;

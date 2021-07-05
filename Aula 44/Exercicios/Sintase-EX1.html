@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let matriculaAluno, nomeAluno, aluno = [], contador = 0,restante
+
+        class Aluno {
+
+            constructor(matricula,nome, nota1,nota2,nota3,media){
+                this.matricula = matricula
+                this.nome = nome
+                this.nota1 = nota1
+                this.nota2 = nota2
+                this.notaTrabalho = nota3
+            }
+
+            calculaMedia() {
+
+                let media = ((this.nota1 * 3) + (this.nota2 * 3) + (this.notaTrabalho * 2)) / 8
+                
+                return media
+
+            }
+
+            final() {
+
+                let media = this.calculaMedia()
+
+                if (media < 6) {
+                     
+                    let restante = 6 - media
+
+                    this.ProvaFinal = restante
+
+                    return console.log(`Falta para passar ${restante} pontos.`)
+                } else {
+
+                    console.log(`O usuario nao precisa da prova final.`)
+
+                    this.ProvaFinal = 0
+
+                }
+            }
+
+        }
+            
+        matriculaAluno = +prompt("Digite a matricula")
+
+        nomeAluno = prompt("Digite o nome")
+
+        let prova1 = +prompt("Digite a primeira nota")
+
+        let prova2 = +prompt("Digite a segunda nota")
+
+        let trabalho = +prompt("Digite a nota do trabalho")
+
+        aluno1 = new Aluno(matriculaAluno,nomeAluno,prova1,prova2,trabalho)
+
+        
+
+    </script>
+</body>
+</html>

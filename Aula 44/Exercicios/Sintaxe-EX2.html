@@ -6,6 +6,176 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+        // 2) Crie uma classe Agenda que pode armazenar 10 pessoas e que seja capaz de realizar as 
+        // seguintes operações:
+        // - armazenaPessoa(nome, telefone)
+        // - removePessoa(nome)
+        // - buscaPessoa(nome) -> Informa o número de telefone da pessoa
+        // - imprimeAgenda() -> Imprime os dados de todas as pessoas da agenda
+        // - imprimePessoa(indice) -> Imprime os dados da pessoa que está na posição "i" da agenda
+
+        class Pessoa {
+            constructor(nome, telefone) {
+                this.nome = nome
+                this.telefone = telefone
+            }
+        }
+
+
+        class Agenda {            
+            constructor() {
+                this.listaPessoas = []
+            }
+
+            armazenaPessoa(nome, telefone) {
+                if (this.listaPessoas.length < 10) {
+                    this.listaPessoas.push(new Pessoa(nome, telefone))
+                    return
+                }
+                console.log("A lista está cheia")
+            }            
+
+            removePessoa(nome) {
+
+
+
+                if (nome === "") {
+                    
+                    return console.log("Nome invalido")
+
+                }
+                for (let i = 0; i <= this.listaPessoas.length; i++) {
+
+                    if (nome === this.listaPessoas[i].nome) {
+
+                        this.listaPessoas.splice(i, 1)
+
+                        return
+                    }
+                    
+                }
+            }
+
+            buscaPessoa(nome) {
+
+                for (let i = 0; i < this.listaPessoas.length; i++) {
+                    
+                    if (this.listaPessoas[i].nome === nome) {
+                        return console.log(`Telefone de ${nome} é : ${this.listaPessoas[i].telefone}`)
+
+                    }
+                }             
+            }
+
+            imprimeAgenda() {
+                let mostraMatriz = "Nome \t Telefone \n"
+                
+                for (let linha = 0; linha < this.listaPessoas.length; linha++) {
+                            
+                    for (let coluna = 0; coluna < 1; coluna++) {
+
+                        mostraMatriz += this.listaPessoas[linha].nome + "\t" + this.listaPessoas[linha].telefone
+                    
+                    }
+                    
+                    mostraMatriz += "\n"
+                
+                }
+
+                console.log(mostraMatriz)
+
+            }
+
+            imprimePessoa(indice) {
+
+                if (indice < this.listaPessoas.length) {
+
+                   return console.log(`Nome: ${this.listaPessoas[indice].nome} | Telefone: ${this.listaPessoas[indice].telefone}`)
+                
+                }
+
+                console.log("Indice invalido");
+            }
+        }
+
+        flag = true
+
+        function menu() {
+            while (flag === true) {
+                
+                let mostrarOpcoes = +prompt (" 1) Adicionar  \n 2) Remover  \n 3) Pesquisar telefone \n 4) Mostrar cadastro \n 5) Mostrar Agenda \n 0) Sair")
+                
+                switch (mostrarOpcoes) { 
+                    case 1:
+                        armazena()
+                        break;
+                    case 2:
+                        remove()
+                        break;
+                    case 3:
+                        pesquisar()
+                        break;
+                    case 4:
+                        mostrar()
+                        break;
+
+                    case 5:
+                        mostrarAgenda()
+                        break;
+                    case 0:
+                        flag = false
+                        break;
+                }
+            }
+        } 
+
+        let agenda = new Agenda()
+        
+        function armazena() {
+            
+            let nome = prompt("Digite um nome para armazenar")
+            
+            let telefone = prompt("Digite um telefone para armazenar")
+
+            agenda.armazenaPessoa(nome, telefone)
+            
+        }
+
+        function remove() {
+        
+            let nomeRemover = prompt("Digite o nome para remover")
+            
+            agenda.removePessoa(nomeRemover)
+
+        }
+
+        function pesquisar() {
+        
+            let nome = prompt("Digite o nome para pesquisar")
+            agenda.buscaPessoa(nome)
+        
+        }
+
+        function mostrar() {
+            
+            let indice = prompt("Digite um indice para mostrar")
+            
+            agenda.imprimePessoa(indice)
+        }
+
+        function mostrarAgenda() {
+            
+            let opcao = prompt("Voce quer listar agenda? \n \n S - para sim \n N - para não").toUpperCase()
+
+            if (opcao == "S") {
+
+                agenda.imprimeAgenda()
+            
+            }
+        }
+        
+        menu()
+    </script>
 </body>
 </html>

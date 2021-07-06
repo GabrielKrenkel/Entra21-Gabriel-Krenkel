@@ -60,15 +60,15 @@
             pula: true
         }
 
-        console.log(coelho.pula) // ?
+        console.log(coelho.pula) // ? true
 
         delete coelho.pula
 
-        console.log(coelho.pula) // ?
+        console.log(coelho.pula) // ? null
 
         delete animal.pula
 
-        console.log(coelho.pula) // ?
+        console.log(coelho.pula) // ? undefined
 
 
         2) Dado os seguintes objetos:
@@ -96,7 +96,39 @@
         console.log(cama.oculos) // 1
         console.log(mesa.dinheiro) // undefined
 
+        /*
 
+        let cabeca = {
+            oculos: 1
+        }
+
+        let mesa = {
+            caneta: 3
+        }
+
+        let cama = {
+            lenco: 1,
+            travesseiro: 2
+        }
+
+        let bolso = {
+            dinheiro: 200
+        }
+
+        mesa.__proto__ = cabeca
+        cama.__proto__ = mesa
+        bolso.__proto__ = cama
+        
+
+        console.log(bolso.caneta) // 3
+        console.log(cama.oculos) // 1
+        console.log(mesa.dinheiro) // undefined
+        
+        */
+
+
+        /*
+        
         3) Nesse problema temos dois hamster: Hamtaro e Fofuxo. Os dois herdam do objeto hamster.
         Quando alimentamos um deles, o outro também fica cheio. Por que? Como consertar isso?
         let hamster = {
@@ -119,6 +151,7 @@
         console.log(hamtaro.estomago) // Maçã
 
         console.log(fofuxo.estomago) // Maçã
+        
         */
 
         

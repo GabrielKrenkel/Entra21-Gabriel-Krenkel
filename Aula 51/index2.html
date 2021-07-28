@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(37, 37, 37);
+        }
+        #card{
+            background-color: black;
+            width: 350px;
+            margin-left: 20px;
+            margin-top: 20px;
+            padding-top: 25px;
+            height: 460px;
+            border-radius: 5%;
+        }
+        #backCard{
+            position: relative;
+            left: 25px;
+        }
+        p{
+            color: white;
+            line-height: 10px;
+        }
+    </style>
+
+    <div id="card">
+        <div id="backCard">
+            <div id="image">
+                <img src="" alt="">
+            </div>
+            <div id="info">
+                    <p id="name">name</p>
+                    <p id="status">Status: alive - raça</p>
+                    <br>
+                    <p>Ultima aparição:</p>
+                    <p id="aparicao">ultima aparição</p>   
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // * Crie uma página que carregue 9 personagens aleatórios e os mostre em cards.
+        // * Crie uma página que permita selecionar um episódio e mostra todos os personagens que fizeram parte daquele episódio.       
+        // * Crie uma página que mostre todos os Ricks que estão vivos.
+
+        let name = document.querySelector("#name"), status = document.querySelector("#status"), aparicao = document.querySelector("#aparicao")
+        async function getRick() {
+            let response = await fetch("https://rickandmortyapi.com/api/character/1") 
+
+            let body = await response.json()
+
+            console.log(body);
+
+            let img = document.querySelector("img")
+
+            img.src = body.image
+            
+            name.innerHTML = body.name
+
+            status.innerHTML = body.status + "\n - \n" + body.species
+            
+            aparicao.innerHTML = body.location.name
+        }
+
+        getRick()
+    </script>
+</body>
+</html>

@@ -6,13 +6,69 @@
     <title>API</title>
 </head>
 <body>
-    
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+            
+        }
+        #gatos{
+            margin-top: 40px;
+        }
+    </style>
+    <form style="display: none;" onsubmit="return false">
+
+        <select>
+            
+        </select>
+
+        <button type="submit" >Pesquisar</button>
+    </form>
+
+    <div id="gatos" style="display: none;"></div>
 
     <script>
-        let div = document.querySelector("#info")
 
-        async function getCat() {
-            let response = await fetch("https://api.thecatapi.com/v1/breeds", {
+        let div = document.querySelector("select")
+
+        let form = document.querySelector("form")
+
+        let enviar = document.querySelector("button")
+
+        let gatosDiv = document.querySelector("#gatos")
+
+        
+
+
+        async function getBreeds() {
+
+            
+
+            let response = await fetch(`https://api.thecatapi.com/v1/breeds`, {
+                headers: {
+                    "x-api-key": "ABC123"
+                }
+            })
+
+            let body = await response.json()
+            
+            for (let i = 0; i < body.length; i++) {
+
+                
+
+                const opt = new Option(body[i].name, body[i].id)
+
+                div.append(opt)
+            }
+            
+            form.style.display = "block"
+            
+        }
+
+        getBreeds()
+
+        async function getImages(breed) {
+            let response = await fetch(`https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${breed}`, {
                 headers: {
                     "x-api-key": "ABC123"
                 }
@@ -20,19 +76,30 @@
 
             let body = await response.json()
 
-            for (let i = 0; i < body.length; i++) {
-                
-                const img = document.createElement("img");                
+            clearElement(gatosDiv);
 
-                img.src = body[i].image.url                
-
-                document.body.append(img);
+            for (let cat of body) {
+                createCatImage(cat.url);
             }
 
-            
+            gatosDiv.style.display = "block"
         }
 
-        getCat()
+        function createCatImage(url) {
+            let img = document.createElement("img");
+
+            img.src = url;
+
+            gatosDiv.append(img);
+        }
+
+        function clearElement(element) {
+            while (element.children.length) {
+                element.firstElementChild.remove();
+            }
+        }
+        
+        enviar.onclick = function () {getImages(div.value)}
     </script>
 </body>
 </html>

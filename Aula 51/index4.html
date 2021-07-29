@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: rgb(37, 37, 37);
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #backCard{
+            background-color: black;
+            width: 350px;
+            margin-left: 20px;
+            margin-top: 20px;
+            padding-top: 25px;
+            
+            height: 480px;
+            border-radius: 5%;
+        }
+        #card{
+            position: relative;
+            left: 25px;
+        }
+        p{
+            color: white;
+            line-height: 10px;
+        }
+        #cards{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+    </style>
+    <div id="cards">
+
+    </div>
+    <script>
+        // * Crie uma página que mostre todos os Ricks que estão vivos.
+        
+        let cardsDiv = document.querySelector("#cards")
+
+        async function getRicks() {
+            
+            let response = await fetch("https://rickandmortyapi.com/api/character/?status=alive&name=rick")
+
+            let body = await response.json()
+
+            console.log(body);
+
+            let proxPg = body.info.next
+
+            let vetorContain = []
+
+            vetorContain.push(body.results)
+
+            nextPage(vetorContain, proxPg)
+        }
+
+        async function nextPage(vetor, next) {
+            
+            let response = await fetch(`${next}`)
+
+            let body = await response.json()
+
+            let vetorContain = vetor
+
+            vetorContain.push(body.results)
+
+            let nextpage = body.info.next
+
+            if (nextpage == null) {
+
+                createCardRick(vetorContain)
+            }else{
+                nextPage1(vetorContain, nextpage)
+            }   
+        }
+
+        async function nextPage1(vetor, next) {
+            
+            let response = await fetch(`${next}`)
+
+            let body = await response.json()
+
+            let vetorContain = vetor
+
+            vetorContain.push(body.results)
+
+            let nextpage = body.info.next
+
+            if (nextpage == null) {
+
+                createCardRick(vetorContain)
+
+            }else{
+                nextPage(vetorContain, nextpage)
+            }
+
+            
+        }
+
+        function createCardRick(vetor) {
+            
+            let vetorContain = vetor
+
+            console.log(vetorContain);
+            for (let i = 0; i < vetorContain.length; i++) {
+                  for (let j = 0; j < vetorContain[i].length; j++) {
+
+                      console.log(vetorContain[i][j].name, j);
+
+                    let img = document.createElement("img")
+
+                    img.src = vetorContain[i][j].image
+                    
+                    let div0 = document.createElement("div") //recebe div1
+
+                    let div1 = document.createElement("div") //recebe div2
+
+                    let div2 = document.createElement("div") //recebe img
+
+                    let div3 = document.createElement("div") //recebe info
+
+                    let parag0 = document.createElement("p") //nome
+
+                    let parag1 = document.createElement("p")//status
+
+                    let parag2 = document.createElement("p")//ultima aparição
+
+                    let parag3 = document.createElement("p")//local ultima aparição
+
+                    let space = document.createElement("br")
+
+                    div0.id = "backCard"
+
+                    div1.id = "card"
+
+                    div2.id = "image"
+
+                    div3.id = "info"
+
+                    parag0.id = "name"
+
+                    parag1.id = "status"
+
+                    parag2.innerHTML = "Ultima aparição:"
+
+                    parag3.id = "aparicao"
+
+                    div2.append(img)
+
+                    div3.append(parag0, parag1, space, parag2, parag3)
+
+                    div1.append(div2,div3)
+
+                    div0.append(div1)
+
+                    parag0.innerText = vetorContain[i][j].name
+
+                    parag1.innerText = vetorContain[i][j].status + "\n - \n" + vetorContain[i][j].species
+                    
+                    parag3.innerText = vetorContain[i][j].location.name
+
+                    let cards = document.querySelector("#cards")
+                    
+                    cards.append(div0)
+                  }
+                
+            }
+        }
+
+        getRicks()
+    </script>
+</body>
+</html>

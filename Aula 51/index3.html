@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
@@ -33,36 +34,79 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            margin-top: 100px;
+            margin-left: 90px;
+        }
+        form{
+            position: absolute;
+            left: 43%;
+            top: 30%;
+        }
+        button{
+            position: absolute;
+            left: 15%;
+            text-decoration: none;
+            height: 30px;
+            width: 180px;
+            background-color: rgb(10, 170, 194);
+            border: 1px solid black;
+        }
+        #imagem{
+            width: 500px;
+            position: relative;
+            left: 35%;
+            
         }
     </style>
+
+    <img src="/Aula 51/images/pngegg.png" id="imagem">
+    <form onsubmit="return false">
+
+        <label>
+            <p>Selecione um episódio
+                <select>
+                
+                </select>
+            </p>
+        </label>
+        <br>
+        <button>Ver personagens</button>
+
+    </form>
 
     <div id="cards">
 
     </div>
-
     <script>
-        // * Crie uma página que carregue 9 personagens aleatórios e os mostre em cards.
         // * Crie uma página que permita selecionar um episódio e mostra todos os personagens que fizeram parte daquele episódio.       
         // * Crie uma página que mostre todos os Ricks que estão vivos.
 
-        let name = document.querySelector("#name"), status = document.querySelector("#status"), aparicao = document.querySelector("#aparicao")
+        let select = document.querySelector("select"), button = document.querySelector("button"), cardsDiv = document.querySelector("#cards")
+        for (let i = 1; i < 42; i++) {
+            
+            let opt = new Option(i, i)
 
-        async function number() {
-            for (let i = 0; i < 9; i++) {
+            select.append(opt)
+        }
 
-                let number = Math.floor(Math.random() * (671 - 1)) + 1
+        async function getCharacters(episode) {
+            
+            let response = await fetch(`https://rickandmortyapi.com/api/episode/${episode}`)
 
-                getRick(number)
+            let body = await response.json()
 
+            clearElement(cardsDiv)
+
+            for (const character of body.characters) {
+                getRick(character)
             }
         }
 
         async function getRick(position) {
-            let response = await fetch(`https://rickandmortyapi.com/api/character/${position}`) 
-
+            
+            let response = await fetch(`${position}`)
+            
             let body = await response.json()
-
-            console.log(body);
 
             let img = document.createElement("img")
 
@@ -121,7 +165,20 @@
             cards.append(div0)
         }
 
-        number()
+        function clearElement(element) {
+            while (element.children.length) {
+                element.firstElementChild.remove();
+            }
+        }
+
+        button.onclick = function () {
+            
+            let episode = select.value
+
+            getCharacters(episode)
+        }
+        
+
     </script>
 </body>
 </html>

@@ -1,0 +1,27 @@
+SELECT nome, preco FROM produtos LIMIT 1;
+
+CREATE TABLE IF NOT EXISTS marca (
+	id SERIAL PRIMARY KEY,
+	nome text NOT NULL UNIQUE
+);
+
+CREATE TABLE IF NOT EXISTS produto (
+	id SERIAL PRIMARY KEY,
+	nome text NOT NULL UNIQUE,
+	id_marca integer NOT NULL REFERENCES marca
+);
+
+INSERT INTO marca (nome) VALUES
+('Apple'), ('Samsung'), ('Xiaomi');
+
+INSERT INTO produto (nome,id_marca) VALUES
+('GALAXY A32', 2),
+('GALAXY A12', 2),
+('Iphone 11', 1);
+
+SELECT * FROM marca;
+SELECT * FROM produto;
+
+SELECT m.nome AS marca_nome, p.nome AS produto_nome
+FROM marca m
+INNER JOIN produto p ON p.id_marca = m.id;

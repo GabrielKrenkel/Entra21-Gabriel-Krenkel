@@ -1,0 +1,41 @@
+1) Uma imobiliária deseja desenvolver um sistema para gerenciar imóveis que são colocados à venda e
+à locação. Este sistema deverá ser composto de uma plataforma para manter os dados dos imóveis e seus
+proprietários e também para manter os contratos de locação que são feitos. No cadastro dos imóveis, 
+deve-se contemplar o número de quartos, número de banheiros, área em metros quadrados e outros que
+considerar importantes. Deve-se também cadastrar os dados pessoais e de contato dos proprietários de
+imóveis e dos locatários. Para cada imóvel que for locado, deve-se cadastrar um contrato de locação com
+as datas de início e término do contrato, o valor do aluguel, o dia de vencimento e um campo que possibilite
+colocar algumas observações importantes.
+Deve-se disponibilizar aos usuários um site que permita que as pessoas interessadas busquem
+imóveis para locação ou venda. É importante considerar que, os filtros para selecionar os imóveis de acordo
+com as características desejadas pelo cliente, devem ser bem definidos e atender ao máximo de
+características possível (p.e.: nº quartos, bairro, preço, área total, se tem piscina, churrasqueira etc…).
+
+
+imovel (ID, Localização, distinção da Zona/Localização, nº de donos, situação do terreno, nº de quartos, nº de banheiros, area do terreno, se tem piscina, churrasqueira, preço.)
+
+proprietário (ID, Nome, CPF, RG, data de nascimento, telefone, email, endereço.)
+
+contrato (ID, Inicio, termino, valor aluguel, vencimento aluguel, observações)
+
+locatário (ID, Nome, CPF, RG, data de nascimento, telefone, email.)
+
+imovel x dono
+- um imovel possui um dono
+- um dono possui varios imoveis
+
+imovel x locatário
+- um imovel contem um locatário
+- um locatário contem um imovel
+
+imovel x contrato
+- um imovel contem um contrato
+- um contrato contem um imovel
+
+dono x contrato
+- um dono contem varios contrato
+- um contrato contem um dono
+
+locatário x contrato
+- um locatário contem um contrato
+- um contrato contem um locatários

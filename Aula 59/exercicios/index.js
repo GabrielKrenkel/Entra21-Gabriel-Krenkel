@@ -61,8 +61,6 @@ const pool = new Pool({
     // }
 
     try {
-        const { rows } = await pool.query("SELECT * FROM funcionarios WHERE nome ILIKE $1", ['%p'])
-
         console.log(rows);
     } catch (error) {
         console.log(error.message);

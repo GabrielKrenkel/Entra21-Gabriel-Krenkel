@@ -1,0 +1,7 @@
+POST /usuarios/1412384123436481723/projetos - Criar um projeto para o usuário
+
+GET /usuarios/1412384123436481723/projetos - Obter os projetos de um usuário
+
+GET /projetos/21312312312312 - Obter um projeto pelo ID do projeto
+
+PUT /projeto/1231231231231 - Atualizar um projeto pelo ID

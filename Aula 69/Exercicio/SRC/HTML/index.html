@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="218689582967-qf12mgjtuc4slestkmnpn5uabcfkl7cg.apps.googleusercontent.com">
+    <title>Login</title>
+</head>
+
+<body>
+    <style>
+        .g-signin2 {
+            position: absolute;
+            left: 45%;
+            top: 40%;
+        }
+    </style>
+    
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+    <a href="#" id="signOut">Sign Out</a>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    <script>
+        async function onSignIn(googleUser) {
+            const id_token = googleUser.getAuthResponse().id_token;
+
+            const body = JSON.stringify({ token: id_token });
+
+            try {
+                await fetch("http://localhost:3000/login-google", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body
+                });
+            } catch (error) {
+                console.log(error);
+            }                        
+        }
+        
+        const btnSignOut = document.querySelector("#signOut");
+
+        btnSignOut.addEventListener("click", () => {
+            const auth2 = gapi.auth2.getAuthInstance();
+            auth2.signOut().then(function () {
+                console.log('User signed out.');
+            });
+        });
+    </script>
+    
+</body>
+
+</html>

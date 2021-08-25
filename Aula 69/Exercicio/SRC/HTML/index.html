@@ -27,16 +27,28 @@
         async function onSignIn(googleUser) {
             const id_token = googleUser.getAuthResponse().id_token;
 
-            const body = JSON.stringify({ token: id_token });
+            
 
+            const body = JSON.stringify({ token: id_token });
+            
+            console.log(body);
+            
             try {
-                await fetch("http://localhost:3000/login-google", {
+                const res = await fetch("http://localhost:3000/login-google", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body
                 });
+
+                const { tokenAcess, refreshToken } = res.json();
+
+                localStorage.setItem("acess-token", tokenAcess);
+                localStorage.setItem("refresh-token", refreshToken);
+
+                location.href = "./user.html";
+                
             } catch (error) {
                 console.log(error);
             }                        

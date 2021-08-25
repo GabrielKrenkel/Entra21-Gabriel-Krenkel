@@ -2,18 +2,18 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class RefreshToken extends Model {
+  class Refreshtoken extends Model {
     static associate(models) {
-      this.belongsTo(models.user, {
+      this.belongsTo(models.User, {
         foreignKey: {
-          type: DataTypes.UUID,
-          name: "user_id"
+          type: DataTypes.STRING,
+          name: "user_email"
         },
         as: "user"
       });
     }
   };
-  RefreshToken.init({
+  Refreshtoken.init({
     id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
@@ -21,16 +21,15 @@ module.exports = (sequelize, DataTypes) => {
     },
     token: {
       type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
+      allowNull: false
     },
-    expiresIn: {
+    expireses_in: {
       type: DataTypes.BIGINT,
       allowNull: false
     }
   }, {
     sequelize,
-    modelName: 'RefreshToken',
+    modelName: 'Refreshtoken',
   });
-  return RefreshToken;
+  return Refreshtoken;
 };
